@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb} % Recomendado para melhor formatação matemática
+\usepackage[font=small, labelfont=bf, justification=centering]{caption}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=red, citecolor=black]{hyperref}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\renewcommand*\contentsname{\textsf{Contents}}
+
+\title{\bfseries\sffamily{USAJMO 2012 Solutions}}
+\author{Samuel de Araújo Brandão}
+\date{\today}
+
+\definecolor{red1}{HTML}{800e13}
+\definecolor{red2}{HTML}{3a5a40}
+\definecolor{red3}{HTML}{800e13}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\textbf{USAJMO 2012 Solution}}
+\fancyhead[R]{\textcolor{red1}{Samuel de Araújo Brandão}, \today}
+
+\begin{document}
+  \maketitle
+
+  \tableofcontents
+  \clearpage
+
+  \section{\textsf{Problems}}
+  \begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Given a triangle $ABC$, let $P$ and $Q$ be points on segments $\overline{AB}$ and $\overline{AC}$,
+    respectively, such that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $\overline{BC}$
+    such that $S$ lies between $B$ and $R$, $\angle BPS = \angle PRS$, and $\angle CQR = \angle QSR$.
+    Prove that $P$, $Q$, $R$, $S$ are concyclic.
+
+  \end{enumerate}
+
+  \clearpage
+
+  \section{\textsf{Solutions: day 1}}
+    \subsection{Problem 1.}
+    \clearpage
+    \subsection{Problem 2.}
+    \clearpage
+    \subsection{Problem 3.}
+    \clearpage
+
+  \section{\textsf{Solutions: day 2}}
+   \subsection{Problem 4.}
+   \clearpage
+   \subsection{Problem 5.}
+   \clearpage
+   \subsection{Problem 6.}
+   \clearpage
+
+  {\centering \textbf{Problem 1} \par}
+
+  Given a triangle $ABC$, let $P$ and $Q$ be points on segments $\overline{AB}$ and $\overline{AC}$,
+  respectively, such that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $\overline{BC}$
+  such that $S$ lies between $B$ and $R$, $\angle BPS = \angle PRS$, and $\angle CQR = \angle QSR$.
+  Prove that $P$, $Q$, $R$, $S$ are concyclic.
+
+  {\centering \textbf{Solution} \par}
+
+  By the $\textit{Alternate Segment Theorem}, \overline{AC}$ is tangent to $(QRS)$ and $\overline{AB}$
+  is tangent to $(PRS)$. Assume for the sake of contradiction that $(QRS)$ and $(PRS)$ are distinct. In that case,
+  $A \in \overline{BC}$ since $\overline{BC}$ is the radical axis and $\text{Pow}_{(QRS)}(A) =
+  \text{Pow}_{(PRS)}(A)$. This leads to a contradiction, as $A \notin \overline{BC}$. Therefore,
+  $P$, $Q$, $R$ and $S$ are concyclic.
+\end{document}
