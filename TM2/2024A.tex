@@ -46,6 +46,15 @@
   }
 }
 
+\tcbset{
+  claimbox/.style={
+    enhanced,
+    colback=white,
+    colframe=color1,
+    boxrule=1pt,
+  }
+}
+
 \begin{document}
   \maketitle
 
@@ -178,7 +187,85 @@
         \textit{Nota: o incentro de um triângulo é a interseção das bissetrizes internas.}
       \end{tcolorbox}
 
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{fourth.png}
+        \caption{Uma figura ilustrando a soluão para o terceiro problema. \href{https://noic.com.br/wp-content/uploads/2025/03/Solucoes_do_TM2_2024_Nivel_A.pdf}{Fonte.}}
+      \end{figure}
+
+      $\overline{AI}$ é um diâmetro de (AMN), pois $\overline{AB}$ é tangente a (MND), logo
+      $\angle{AMI} = 90^{\circ}$. Por conseguinte, $\angle{AIT} = 90^{\circ}$ resulta em
+      $\angle AJ'J = 90^{\circ}$, quando J' é a projeção de $\overline{AJ}$ sobre o segmento 
+      $\overline{BC}$. Logo, basta que $\overline{TI}$ seja tangente a (AMN).
+
+      \begin{tcolorbox}[claimbox={Claim}]
+        \textbf{\sffamily\textcolor{color1}{Alegação ---}} $T$ é o centro 
+        radical de (ABC), (AMN) e (BIC).
+      \end{tcolorbox}
+
+      \textit{Prova.} Digamos que $\overline{TI}$ é uma tangente de (BIC) passando por $I$.
+      $\overline{AF}$ é o eixo radical de (ABC) e (AMN) e $T \in
+      \overline{AF}$, logo, $TF \cdot TA = TB \cdot TC$. Isso prova com excelência
+      que $\overline{TI}$ é o eixo radical de (AMN) e (BIC), pois 
+
+      \begin{align*}
+                                      &= TB \cdot TC \\
+        \operatorname{Pot}_{(AMN)}(T) &= TF \cdot TA \\
+                                      &= \operatorname{Pot}_{(BIC)}(T).
+      \end{align*}
+
+      Já que $\overline{TI}$ é tangente à
+      (BIC), tal deve ser tangente a (AMN) também, para que $\overline{TI}$
+      seja o eixo radical dessas circunferências.
+
     \clearpage
+
+    \subsection{Problem 3.}
+\begin{tcolorbox}[problembox={Problem Statement}]
+  In the scalene triangle $ABC$, let $I$ be its incentre and $D$ the point where $AI$
+  meets $BC$. Let $M$ and $N$ be the points where the incircle of $ABC$ touches $AB$
+  and $AC$, respectively. Let $F$ be the second intersection of the circumcircle $(AMN)$
+  with the circumcircle $(ABC)$. Let $T$ be the intersection of $AF$ with the extension
+  of $BC$. Let $J$ be the intersection of $TI$ with the line through $D$ parallel to $FI$.
+  Prove that $AJ$ is perpendicular to $BC$.
+
+  \centering
+    \includegraphics[width=0.5\textwidth]{third.png}
+
+  \textit{Note: the incentre of a triangle is the intersection of its internal angle bisectors.}
+\end{tcolorbox}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{fourth.png}
+  \caption{A figure illustrating the solution to the third problem. \href{https://noic.com.br/wp-content/uploads/2025/03/Solucoes_do_TM2_2024_Nivel_A.pdf}{Source.}}
+\end{figure}
+
+$\overline{AI}$ is a diameter of $(AMN)$, since $\overline{AB}$ is tangent to $(MND)$,
+hence $\angle AMI = 90^\circ$. Consequently, $\angle AIT = 90^\circ$ implies
+$\angle AJ'J = 90^\circ$, where $J'$ is the projection of $\overline{AJ}$ onto
+segment $\overline{BC}$. Therefore, it suffices to show that $\overline{TI}$ is tangent
+to $(AMN)$.
+
+\begin{tcolorbox}[claimbox={Claim}]
+  \textbf{\sffamily\textcolor{color1}{Claim ---}} $T$ is the radical centre of $(ABC)$, $(AMN)$ and $(BIC)$.
+\end{tcolorbox}
+
+\textit{Proof.} Suppose that $\overline{TI}$ is a tangent to $(BIC)$ at $I$.
+The line $\overline{AF}$ is the radical axis of $(ABC)$ and $(AMN)$, and $T\in\overline{AF}$,
+so 
+\[
+  TF \cdot TA \;=\; TB \cdot TC.
+\]
+This shows that $\overline{TI}$ is also the radical axis of $(AMN)$ and $(BIC)$, since
+\begin{align*}
+                                 &= TB \cdot TC, \\
+  \operatorname{Pot}_{(AMN)}(T) &= TF \cdot TA, \\
+                                 &= \operatorname{Pot}_{(BIC)}(T).
+\end{align*}
+Since $\overline{TI}$ is tangent to $(BIC)$, it must also be tangent to $(AMN)$, and thus
+$\overline{TI}$ is the common radical axis of these circles, completing the proof.
+
 
     \subsection{Problema 4.}
       \begin{tcolorbox}[problembox={Enunciado do problema}]
