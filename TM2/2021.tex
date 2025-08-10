@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage[font=small, labelfont=bf, justification=centering]{caption}
+
+\definecolor{color1}{HTML}{941b0c}
+\definecolor{color2}{HTML}{bc3908}
+\definecolor{color3}{HTML}{f6aa1c}
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=color2, citecolor=black]{hyperref}
+
+\title{\sffamily\bfseries{Soluções TM$^2$ 2021A $2^{\circ}$ fase}}
+\author{Samuel de Araújo Brandão}
+\date{9 de Agosto de 2025}
+
+\renewcommand*\contentsname{\textsf{Conteúdos}}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\sffamily\bfseries{Soluções TM$^2$ 2021A $2^{\circ}$ Fase}}
+\fancyhead[R]{\textcolor{color2}{Samuel Brandão}, 9 de Agosto de 2025}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14.5pt}
+
+\tcbset{
+  problembox/.style = {
+    colback=white,
+    colframe=color2,
+    boxrule=1pt,
+    arc=2mm,
+    top=1pt,
+    bottom=1pt,
+    left=1pt,
+    right=1pt,
+    fonttitle=\sffamily\bfseries\color{white},
+    colbacktitle=color2,
+    title={Enunciado do problema}
+  }
+}
+
+\tcbset{
+  claimbox/.style={
+    colback=white,
+    colframe=color1,
+    boxrule=1pt,
+  }
+}
+
+\begin{document}
+  \maketitle
+
+  Uma coleção de soluções para a \textbf{TM$^2$ 2021 nível A $2^{\circ}$ Fase}, inspirada no estilo de Evan Chen.
+
+  Todas as soluções foram inteiramente escritas por mim, enquanto me preparava para a
+  International Mathematical Olympiad (IMO).
+
+  Caso encontre algum erro ou tiver sugestões ou comentários, sinta-se a vontade 
+  para entrar em contato!
+
+  \tableofcontents
+  
+  \clearpage
+  
+  \section{\textsf{Problemas}}
+  \begin{enumerate}[label=\textbf{\arabic*.}]
+      \item Sejam $a, b, c$ números reais positivos tais que:
+        \[
+          ab - c = 3
+        \]
+        \[
+          abc = 18
+        \]
+
+        Calcule o valor numérico de $\frac{ab}{c}$.
+
+        \item Seja $\triangle ABC$ um triângulo em que $\angle ACB = 40^\circ$ e $\angle
+          BAC = 60^\circ$. Seja $D$ um ponto no interior do segmento $BC$ tal que $CD
+          = \frac{AB}{2}$ e seja $M$ o ponto médio do segmento $AC$. Quanto mede o ângulo
+          $\angle CMD$ em graus?
+
+        \item Um número natural é chamado \textit{caótigal} se ele e seu sucessor possuem,
+          ambos, a soma dos seus algarismos divisível por $2021$. Quantos algarismos tem
+          o menor número \textit{caótigal}?
+          
+        \item Mariana brinca com um tabuleiro $8 \times 8$ com todas as suas casas em branco. Ela diz que duas casas são vizinhas se elas possuírem um lado ou um vértice em comum, ou seja, duas casas podem ser vizinhas verticalmente, horizontalmente ou diagonalmente. A brincadeira consiste em preencher as $64$ casas do tabuleiro, uma após a outra, cada uma com um número de acordo com a seguinte regra: ela escolhe sempre uma casa em branco e a preenche com o número inteiro igual à quantidade de casas
+          vizinhas desta que ainda estejam em branco. Feito isso, a casa não é mais 
+          considerada em branco.
+
+          Demonstre que o valor da soma de todos os $64$ números escritos no tabuleiro
+          ao final da brincadeira não depende da ordem do preenchimento. Além disso,
+          calcule o valor dessa soma.
+          \textit{Observação: Uma casa não é vizinha a si mesma.}
+
+    \end{enumerate}
+
+    \clearpage
+
+  \section{\textsf{Soluções}}
+    \subsection{Problema 1.}
+      \begin{tcolorbox}[problembox]
+           Sejam $a, b, c$ números reais positivos tais que:
+          \[
+            ab - c = 3
+          \]
+          \[
+           abc = 18
+          \]
+
+          Calcule o valor numérico de $\frac{ab}{c}$.
+      \end{tcolorbox}
+      Já que $ab-c=3$,
+
+      \[
+        ab=3+c \implies c^2+3c=18 \implies c^2+3c-18=0.
+      \]
+
+      Pela \textit{Fórmula de Bhaskara},
+      \[
+        \frac{-3 \pm \sqrt{3^2 - 4 \cdot 1 \cdot (-18)}}{2 \cdot 1} = \frac{-3 \pm 9}{2}.
+      \]
+
+      Logo, $c_1=3$, $c_2=-6$. Segundo o enunciado, $a$, $b$, $c$ são positivos, logo
+      $c=3$.
+      \[
+        \frac{ab}{c} = \frac{3 + c}{c} = \frac{6}{3} = 2.
+      \]
+    
+    \clearpage
+
+    \subsection{Problema 2.}
+      \begin{tcolorbox}[problembox]
+        Seja $\triangle ABC$ um triângulo em que $\angle ACB = 40^\circ$ e $\angle
+        BAC = 60^\circ$. Seja $D$ um ponto no interior do segmento $BC$ tal que $CD
+        = \frac{AB}{2}$ e seja $M$ o ponto médio do segmento $AC$. Quanto mede o ângulo
+        $\angle CMD$ em graus?
+      \end{tcolorbox}
+
+    \clearpage
+
+    \subsection{Problema 3.}
+      \begin{tcolorbox}[problembox]
+         Um número natural é chamado \textit{caótigal} se ele e seu sucessor possuem,
+          ambos, a soma dos seus algarismos divisível por $2021$. Quantos algarismos tem
+          o menor número \textit{caótigal}?
+      \end{tcolorbox}
+
+    \clearpage
+
+    \subsection{Problema 4.}
+      \begin{tcolorbox}[problembox]
+         Mariana brinca com um tabuleiro $8 \times 8$ com todas as suas casas em branco.
+          Ela diz que duas casas são vizinhas se elas possuírem um lado ou um vértice em
+          comum, ou seja, duas casas podem ser vizinhas verticalmente, horizontalmente ou
+          diagonalmente. A brincadeira consiste em preencher as $64$ casas do tabuleiro,
+          uma após a outra, cada uma com um número de acordo com a seguinte regra:
+          ela escolhe sempre uma casa em branco e a preenche com o número inteiro igual
+          à quantidade de casas vizinhas desta que ainda estejam em branco. Feito isso,
+          a casa não é mais considerada em branco. \\
+
+          Demonstre que o valor da soma de todos os $64$ números escritos no tabuleiro
+          ao final da brincadeira não depende da ordem do preenchimento. Além disso,
+          calcule o valor dessa soma.
+         \textit{Observação: Uma casa não é vizinha a si mesma.}
+      \end{tcolorbox}
+
+    \clearpage
+
+  \section{\textsf{Referências}}
+\end{document}
