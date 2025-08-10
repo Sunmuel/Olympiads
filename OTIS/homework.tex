@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage[font=small, labelfont=bf, justification=centering]{caption}
+
+\definecolor{color1}{HTML}{941b0c}
+\definecolor{color2}{HTML}{bc3908}
+\definecolor{color3}{HTML}{f6aa1c}
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=color2, citecolor=black]{hyperref}
+
+\title{\sffamily\bfseries{OTIS Homework Problems}}
+\author{Samuel de Araújo Brandão}
+\date{10 de Agosto de 2025}
+
+\renewcommand*\contentsname{\textsf{Contents}}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\sffamily\bfseries{OTIS Homework Problems}}
+\fancyhead[R]{\textcolor{color2}{Samuel Brandão}, August 10 2025}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14.5pt}
+
+\tcbset{
+  problembox/.style = {
+    colback=white,
+    colframe=color2,
+    boxrule=1pt,
+    arc=2mm,
+    top=1pt,
+    bottom=1pt,
+    left=1pt,
+    right=1pt,
+    fonttitle=\sffamily\bfseries\color{white},
+    colbacktitle=color2,
+    title={Enunciado do problema}
+  }
+}
+
+\tcbset{
+  claimbox/.style={
+    colback=white,
+    colframe=color1,
+    boxrule=1pt,
+  }
+}
+
+\begin{document}
+  \maketitle
+
+  A collection of solutions for Geometry, Inequalities and others, meant to be sent to Evan Chen, in the OTIS Application Homework.
+
+  \tableofcontents
+  
+  \clearpage
+  
+  \section{\textsf{Problems}}
+    \subsection{Geometry}
+      \begin{enumerate}[label=\textbf{\arabic*.}]
+        \item \textbf{(\#2.28, JMO 2012)} Given a triangle $ABC$, let $P$ and $Q$ be points on segments $AB$ and $AC$, respectively, such
+          that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $BC$ such that $S$ lies between $B$ and $R$, $\angle BPS = \angle PRS$,
+          and $\angle CQR = \angle QSR$. Prove that $P$, $Q$, $R$, $S$ are concyclic.
+
+        \item \textbf{(\#2.35, IMO 2009)} Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $CA$
+          and $AB$ respectively. Let $K$, $L$, $M$ be the midpoints of $BP$, $CQ$, $PQ$. Suppose that $PQ$ is tangent to the circumcircle 
+          of $\triangle KLM$. Prove that $OP = OQ$.
+
+        \item \textbf{(\#3.25, USAMO 1993)} Let $ABCD$ be a quadrilateral whose diagonals are perpendicular and meet at $E$. Prove that the reflections
+          of $E$ across the sides of $ABCD$ are concyclic.
+      \end{enumerate}
+
+    \subsection{Inequalities}
+      \begin{enumerate}[label=\textbf{\arabic*.}]
+        \item Suppose that $a^2 + b^2 + c^2 = 1$ for positive real numbers $a, b, c$. Find the minimum possible value of
+          \[
+            \frac{ab}{c} + \frac{bc}{a} + \frac{ca}{b}.
+          \]
+        \item Let $a, b, c$ be positive real numbers such that $a^2 + b^2 + c^2 + (a+b+c)^2 \le 4$. Prove that
+          \[
+            \frac{ab + 1}{(a+b)^2} + \frac{bc + 1}{(b+c)^2} + \frac{ca + 1}{(c+a)^2} \ge 3.
+          \]
+        \item Let $a, b, c, d$ be positive reals with $(a+c)(b+d) = 1$. Prove that
+          \[
+            \frac{a^3}{b+c+d} + \frac{b^3}{c+d+a} + \frac{c^3}{d+a+b} + \frac{d^3}{a+b+c} \ge \frac13.
+          \]
+      \end{enumerate}
+    \subsection{Additional}
+      \begin{enumerate}[label=\textbf{\arabic*.}]
+        \item Write a computer program to find the number of ordered pairs of prime numbers $(p,q)$ such that when
+          \[
+            N = p^2 + q^3
+          \]
+          is written in decimal (without leading zeros), each digit from $0$ to $9$ appears exactly once. For example, $(109,1163)$ is one
+          such pair because $109^2 + 1163^3 = 1573049628$.
+        \item Find all functions $f:\mathbb{R}\to\mathbb{R}$ for which
+          \[
+            f\big(xf(x)+f(y)\big)=f(x)^2+y
+          \]
+          holds for all real numbers $x$ and $y$.
+        \item Let $a,b,c,d$ be real numbers such that $b-d\ge 5$ and all zeros $x_1,x_2,x_3,x_4$ of the polynomial $P(x)=x^4+ax^3+bx^2+cx+d$ are 
+          real. Find the smallest value the product $(x_1^2+1)(x_2^2+1)(x_3^2+1)(x_4^2+1)$ can take.
+        \item Ana and Banana are playing a game. First Ana picks a word, which is defined to be a nonempty sequence of capital English
+          letters. Then Banana picks a nonnegative integer $k$ and challenges Ana to supply a word with exactly $k$ subsequences which are 
+          equal to Ana's word. Ana wins if she is able to supply such a word, otherwise she loses. For example, if Ana picks the word “TST”,
+          and Banana chooses $k=4$, then Ana can supply the word “TSTST” which has $4$ subsequences equal to Ana's word. Which words can Ana 
+          pick so that she can win no matter what value of $k$ Banana chooses?
+      \end{enumerate}
+
+    \clearpage
+
+  \section{\textsf{Geometry Solutions}}
+    \
+    \subsection{Problem 1.}
+      \begin{tcolorbox}[problembox=Problem statement]
+        Given a triangle $ABC$, let $P$ and $Q$ be points on segments $\overline{AB}$ and $\overline{AC}$,
+        respectively, such that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $\overline{BC}$
+        such that $S$ lies between $B$ and $R$, $\angle BPS = \angle PRS$, and $\angle CQR = \angle QSR$.
+        Prove that $P$, $Q$, $R$, $S$ are concyclic.
+      \end{tcolorbox}
+      By the $\textit{Alternate Segment Theorem}, \overline{AC}$ is tangent to $(QRS)$ and $\overline{AB}$
+      is tangent to $(PRS)$. Assume for the sake of contradiction that $(QRS)$ and $(PRS)$ are distinct. In that case,
+      $A \in \overline{BC}$ since $\overline{BC}$ is the radical axis and $\text{Pow}_{(QRS)}(A) =
+      \text{Pow}_{(PRS)}(A)$. This leads to a contradiction, as $A \notin \overline{BC}$. Therefore,
+      $P$, $Q$, $R$ and $S$ are concyclic.
+
+    \clearpage
+
+    \subsection{Problem 2.}
+      \begin{tcolorbox}[problembox]
+      \end{tcolorbox}
+
+    \clearpage
+
+    \subsection{Problem 3.}
+      \begin{tcolorbox}[problembox]
+      \end{tcolorbox}
+
+  \clearpage
+
+  \section{\textsf{Inequalities Solutions}}
+    \subsection{Problem 1.}
+
+    \clearpage
+
+    \subsection{Problem 2.}
+
+    \clearpage
+
+    \subsection{Problem 3.}
+
+  \clearpage
+
+  \section{\textsf{Additional Solutions}}
+    \subsection{Problem 1.}
+
+    \clearpage
+
+    \subsection{Problem 2.}
+
+    \clearpage
+
+    \subsection{Problem 3.}
+
+    \clearpage
+
+    \subsection{Problem 4.}
+
+  \clearpage
+
+  \section{\textsf{References}}
+    This document was made possible thanks to the help and inspiration of the following resource:
+    \renewcommand{\refname}{\vspace{-2em}}
+    \begin{thebibliography}{9}
+      \bibitem{noic}
+      NOIC - Núcleo Olímpico de Iniciação Científica
+      \textit{Potência de Ponto}, 2023.
+      Available in: \url{https://noic.com.br/wp-content/uploads/2023/10/potencia.pdf}
+      \bibitem{obm}
+      OBM - Olimpíada Brasileira de Matemática.
+      \textit{Potência de Ponto, Eixo Radical, Centro Radical e Aplicações}, 2017.
+      Available in: \url{https://www.obm.org.br/content/uploads/2017/01/eixos-2.pdf}
+      \bibitem{evan}
+      Evan Chen.
+      \textit{JMO 2012 Solution Notes}, 2025.
+      Available in: \url{https://web.evanchen.cc/exams/JMO-2012-notes.pdf}
+    \end{thebibliography}
+
+\end{document}
