@@ -16,7 +16,7 @@
 
 \title{\sffamily\bfseries{OTIS Homework Problems}}
 \author{Samuel de Araújo Brandão}
-\date{10 de Agosto de 2025}
+\date{August 10, 2025}
 
 \renewcommand*\contentsname{\textsf{Contents}}
 
@@ -40,7 +40,7 @@
     right=1pt,
     fonttitle=\sffamily\bfseries\color{white},
     colbacktitle=color2,
-    title={Enunciado do problema}
+    title={Problem statement}
   }
 }
 
@@ -57,27 +57,30 @@
 
   A collection of solutions for Geometry, Inequalities and others, meant to be sent to Evan Chen, in the OTIS Application Homework.
 
+  For some problems—such as the first geometry problem—I checked the official solution after solving them. If my solution was incorrect, I 
+  revised it; if it was correct, I sometimes drew inspiration from the official solution to improve my own.
+
   \tableofcontents
   
   \clearpage
   
   \section{\textsf{Problems}}
     \subsection{Geometry}
-      \begin{enumerate}[label=\textbf{\arabic*.}]
-        \item \textbf{(\#2.28, JMO 2012)} Given a triangle $ABC$, let $P$ and $Q$ be points on segments $AB$ and $AC$, respectively, such
+      \begin{enumerate}[label=\textbf{A.\arabic*.}]
+        \item \textbf{\textcolor{color2}{(USAJMO 2012, P1)}} Given a triangle $ABC$, let $P$ and $Q$ be points on segments $AB$ and $AC$, respectively, such
           that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $BC$ such that $S$ lies between $B$ and $R$, $\angle BPS = \angle PRS$,
           and $\angle CQR = \angle QSR$. Prove that $P$, $Q$, $R$, $S$ are concyclic.
 
-        \item \textbf{(\#2.35, IMO 2009)} Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $CA$
+        \item \textbf{\textcolor{color2}{(IMO 2019, P2)}} Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $CA$
           and $AB$ respectively. Let $K$, $L$, $M$ be the midpoints of $BP$, $CQ$, $PQ$. Suppose that $PQ$ is tangent to the circumcircle 
           of $\triangle KLM$. Prove that $OP = OQ$.
 
-        \item \textbf{(\#3.25, USAMO 1993)} Let $ABCD$ be a quadrilateral whose diagonals are perpendicular and meet at $E$. Prove that the reflections
+        \item \textbf{\textcolor{color2}{(USAMO 1993, P2)}} Let $ABCD$ be a quadrilateral whose diagonals are perpendicular and meet at $E$. Prove that the reflections
           of $E$ across the sides of $ABCD$ are concyclic.
       \end{enumerate}
 
     \subsection{Inequalities}
-      \begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{enumerate}[label=\textbf{B.\arabic*.}]
         \item Suppose that $a^2 + b^2 + c^2 = 1$ for positive real numbers $a, b, c$. Find the minimum possible value of
           \[
             \frac{ab}{c} + \frac{bc}{a} + \frac{ca}{b}.
@@ -92,21 +95,21 @@
           \]
       \end{enumerate}
     \subsection{Additional}
-      \begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{enumerate}[label=\textbf{C.\arabic*.}]
         \item Write a computer program to find the number of ordered pairs of prime numbers $(p,q)$ such that when
           \[
             N = p^2 + q^3
           \]
           is written in decimal (without leading zeros), each digit from $0$ to $9$ appears exactly once. For example, $(109,1163)$ is one
           such pair because $109^2 + 1163^3 = 1573049628$.
-        \item Find all functions $f:\mathbb{R}\to\mathbb{R}$ for which
+        \item \textbf{\textcolor{color2}{(Balkan MO 1997, P4)}} Find all functions $f:\mathbb{R}\to\mathbb{R}$ for which
           \[
             f\big(xf(x)+f(y)\big)=f(x)^2+y
           \]
           holds for all real numbers $x$ and $y$.
-        \item Let $a,b,c,d$ be real numbers such that $b-d\ge 5$ and all zeros $x_1,x_2,x_3,x_4$ of the polynomial $P(x)=x^4+ax^3+bx^2+cx+d$ are 
+        \item \textbf{\textcolor{color2}{(USAMO 2014, P1)}} Let $a,b,c,d$ be real numbers such that $b-d\ge 5$ and all zeros $x_1,x_2,x_3,x_4$ of the polynomial $P(x)=x^4+ax^3+bx^2+cx+d$ are 
           real. Find the smallest value the product $(x_1^2+1)(x_2^2+1)(x_3^2+1)(x_4^2+1)$ can take.
-        \item Ana and Banana are playing a game. First Ana picks a word, which is defined to be a nonempty sequence of capital English
+        \item \textbf{\textcolor{color2}{(USA TSTST, P2)}} Ana and Banana are playing a game. First Ana picks a word, which is defined to be a nonempty sequence of capital English
           letters. Then Banana picks a nonnegative integer $k$ and challenges Ana to supply a word with exactly $k$ subsequences which are 
           equal to Ana's word. Ana wins if she is able to supply such a word, otherwise she loses. For example, if Ana picks the word “TST”,
           and Banana chooses $k=4$, then Ana can supply the word “TSTST” which has $4$ subsequences equal to Ana's word. Which words can Ana 
@@ -117,7 +120,7 @@
 
   \section{\textsf{Geometry Solutions}}
     \
-    \subsection{Problem 1.}
+    \subsection{Problem A.1}
       \begin{tcolorbox}[problembox=Problem statement]
         Given a triangle $ABC$, let $P$ and $Q$ be points on segments $\overline{AB}$ and $\overline{AC}$,
         respectively, such that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $\overline{BC}$
@@ -132,45 +135,106 @@
 
     \clearpage
 
-    \subsection{Problem 2.}
+    \subsection{Problem A.2}
       \begin{tcolorbox}[problembox]
+        Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $CA$
+        and $AB$ respectively. Let $K$, $L$, $M$ be the midpoints of $BP$, $CQ$, $PQ$. Suppose that $PQ$ is tangent to the circumcircle 
+        of $\triangle KLM$. Prove that $OP = OQ$.
+
       \end{tcolorbox}
 
     \clearpage
 
-    \subsection{Problem 3.}
+    \subsection{Problem A.3}
       \begin{tcolorbox}[problembox]
+        Let $ABCD$ be a quadrilateral whose diagonals are perpendicular and meet at $E$. Prove that the reflections
+        of $E$ across the sides of $ABCD$ are concyclic.
       \end{tcolorbox}
 
   \clearpage
 
   \section{\textsf{Inequalities Solutions}}
-    \subsection{Problem 1.}
+    \subsection{Problem B.1}
+      \begin{tcolorbox}[problembox]
+         Suppose that $a^2 + b^2 + c^2 = 1$ for positive real numbers $a, b, c$. Find the minimum possible value of
+          \[
+            \frac{ab}{c} + \frac{bc}{a} + \frac{ca}{b}.
+          \]
+      \end{tcolorbox}
+      The minimum possible value is $3\sqrt[3]{abc}$.
+
+      The most important thing to notice is that
+      \[
+        \frac{ab}{c} + \frac{bc}{a} + \frac{ca}{b} = \frac{a^2b^2 + b^2c^2 + c^2a^2}{abc}
+      \]
+      
+      can be achieved by rearranging the \textit{AM-GM inequality}, as you can see:
+      \[
+        \frac{a^2b^2 + b^2c^2 + c^2a^2}{3} \ge abc\sqrt[3]{abc} \implies \frac{a^2b^2 + b^2c^2 + c^2a^2}{abc} \ge 3\sqrt[3]{abc}.
+      \]
 
     \clearpage
 
-    \subsection{Problem 2.}
+    \subsection{Problem B.2}
+      \begin{tcolorbox}[problembox]
+         Let $a, b, c$ be positive real numbers such that $a^2 + b^2 + c^2 + (a+b+c)^2 \le 4$. Prove that
+          \[
+            \frac{ab + 1}{(a+b)^2} + \frac{bc + 1}{(b+c)^2} + \frac{ca + 1}{(c+a)^2} \ge 3.
+          \]
+      \end{tcolorbox}
 
     \clearpage
 
-    \subsection{Problem 3.}
+    \subsection{Problem B.3}
+      \begin{tcolorbox}[problembox]
+         Let $a, b, c, d$ be positive reals with $(a+c)(b+d) = 1$. Prove that
+          \[
+            \frac{a^3}{b+c+d} + \frac{b^3}{c+d+a} + \frac{c^3}{d+a+b} + \frac{d^3}{a+b+c} \ge \frac13.
+          \]
+      \end{tcolorbox}
 
   \clearpage
 
   \section{\textsf{Additional Solutions}}
-    \subsection{Problem 1.}
+    \subsection{Problem C.1}
+      \begin{tcolorbox}[problembox]
+         Write a computer program to find the number of ordered pairs of prime numbers $(p,q)$ such that when
+          \[
+            N = p^2 + q^3
+          \]
+          is written in decimal (without leading zeros), each digit from $0$ to $9$ appears exactly once. For example, $(109,1163)$ is one
+          such pair because $109^2 + 1163^3 = 1573049628$.
+     \end{tcolorbox}
 
     \clearpage
 
-    \subsection{Problem 2.}
+    \subsection{Problem C.2}
+      \begin{tcolorbox}[problembox]
+         Find all functions $f:\mathbb{R}\to\mathbb{R}$ for which
+          \[
+            f\big(xf(x)+f(y)\big)=f(x)^2+y
+          \]
+          holds for all real numbers $x$ and $y$.
+      \end{tcolorbox}
 
     \clearpage
 
-    \subsection{Problem 3.}
-
+    \subsection{Problem C.3}
+      \begin{tcolorbox}[problembox]
+         Let $a,b,c,d$ be real numbers such that $b-d\ge 5$ and all zeros $x_1,x_2,x_3,x_4$ of the polynomial $P(x)=x^4+ax^3+bx^2+cx+d$ are 
+          real. Find the smallest value the product $(x_1^2+1)(x_2^2+1)(x_3^2+1)(x_4^2+1)$ can take.
+      \end{tcolorbox}
+          
     \clearpage
 
-    \subsection{Problem 4.}
+    \subsection{Problem C.4}
+      \begin{tcolorbox}[problembox]
+         Ana and Banana are playing a game. First Ana picks a word, which is defined to be a nonempty sequence of capital English
+          letters. Then Banana picks a nonnegative integer $k$ and challenges Ana to supply a word with exactly $k$ subsequences which are 
+          equal to Ana's word. Ana wins if she is able to supply such a word, otherwise she loses. For example, if Ana picks the word “TST”,
+          and Banana chooses $k=4$, then Ana can supply the word “TSTST” which has $4$ subsequences equal to Ana's word. Which words can Ana 
+          pick so that she can win no matter what value of $k$ Banana chooses?
+      \end{tcolorbox}
 
   \clearpage
 
