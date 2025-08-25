@@ -6,17 +6,20 @@
 \usepackage{fancyhdr}
 \usepackage{tcolorbox}
 \usepackage{enumitem}
+\usepackage{listings}
+\tcbuselibrary{listings}
 \usepackage[font=small, labelfont=bf, justification=centering]{caption}
 
 \definecolor{color1}{HTML}{941b0c}
 \definecolor{color2}{HTML}{bc3908}
 \definecolor{color3}{HTML}{f6aa1c}
+\definecolor{color4}{rgb}{0.95,0.95,0.95}
 
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=color2, citecolor=black]{hyperref}
 
 \title{\sffamily\bfseries{OTIS Homework Problems}}
 \author{Samuel de Araújo Brandão}
-\date{August 10, 2025}
+\date{August 24, 2025}
 
 \renewcommand*\contentsname{\textsf{Contents}}
 
@@ -24,7 +27,7 @@
 \fancyhf{}
 
 \fancyhead[L]{\sffamily\bfseries{OTIS Homework Problems}}
-\fancyhead[R]{\textcolor{color2}{Samuel Brandão}, August 10 2025}
+\fancyhead[R]{\textcolor{color2}{Samuel Brandão}, August 24 2025}
 \fancyfoot[C]{\thepage}
 \setlength{\headheight}{14.5pt}
 
@@ -49,6 +52,34 @@
     colback=white,
     colframe=color1,
     boxrule=1pt,
+  }
+}
+
+\tcbset{
+  listing engine=listings,
+  colback=color4,      % background color (reuse your definition)
+  colframe=black!40,   % border color
+  listing only,
+  arc=4mm,             % corner radius
+  boxrule=0.4pt,       % border thickness
+  top=2pt, bottom=2pt, left=1pt, right=1pt
+}
+
+\newtcblisting{pycode}{
+  listing options={
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{color2}\bfseries,
+    stringstyle=\color{color3},
+    commentstyle=\color{color3}\itshape,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=6pt,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4,
+    columns=fullflexible,
   }
 }
 
@@ -109,7 +140,7 @@
           holds for all real numbers $x$ and $y$.
         \item \textbf{\textcolor{color2}{(USAMO 2014, P1)}} Let $a,b,c,d$ be real numbers such that $b-d\ge 5$ and all zeros $x_1,x_2,x_3,x_4$ of the polynomial $P(x)=x^4+ax^3+bx^2+cx+d$ are 
           real. Find the smallest value the product $(x_1^2+1)(x_2^2+1)(x_3^2+1)(x_4^2+1)$ can take.
-        \item \textbf{\textcolor{color2}{(USA TSTST, P2)}} Ana and Banana are playing a game. First Ana picks a word, which is defined to be a nonempty sequence of capital English
+        \item \textbf{\textcolor{color2}{(USA TSTST 2017, P2)}} Ana and Banana are playing a game. First Ana picks a word, which is defined to be a nonempty sequence of capital English
           letters. Then Banana picks a nonnegative integer $k$ and challenges Ana to supply a word with exactly $k$ subsequences which are 
           equal to Ana's word. Ana wins if she is able to supply such a word, otherwise she loses. For example, if Ana picks the word “TST”,
           and Banana chooses $k=4$, then Ana can supply the word “TSTST” which has $4$ subsequences equal to Ana's word. Which words can Ana 
@@ -205,6 +236,46 @@
           is written in decimal (without leading zeros), each digit from $0$ to $9$ appears exactly once. For example, $(109,1163)$ is one
           such pair because $109^2 + 1163^3 = 1573049628$.
      \end{tcolorbox}
+     The answer is 1270 ordered pairs. I have no idea what I'm doing...
+     \begin{pycode}
+        from bisect import bisect_left, bisect_right
+        from math import isqrt
+
+        def sieve(n: int) -> list[int]:
+          b = bytearray(b"\x01") * (n + 1)
+          b[0:2] = b"\x00\x00"
+          r = isqrt(n)
+          for p in range(2, r + 1):
+            if b[p]:
+              start = p * p
+              b[start:n + 1:p] = b"\x00" * (((n - start) // p) + 1)
+          return [i for i, v in enumerate(b) if v]
+
+        def is_pandigital_0_9(x: int) -> bool:
+          if x < 10**9 or x >= 10**10:
+            return False
+          s = str(x)
+          return len(s) == 10 and set(s) == set("0123456789")
+
+        def main() -> None:
+          primes = sieve(100_000)
+          primes_q = [q for q in primes if q <= 2154]
+          p2 = [p * p for p in primes]
+          total = 0
+          for q in primes_q:
+            q3 = q * q * q
+            lo = 10**9 - q3
+            hi = 10**10 - 1 - q3
+            i0 = bisect_left(p2, max(0, lo))
+            i1 = bisect_right(p2, hi)
+            for i in range(i0, i1):
+              if is_pandigital_0_9(p2[i] + q3):
+                total += 1
+          print(total)
+
+        if __name__ == "__main__":
+          main()
+     \end{pycode}
 
     \clearpage
 
