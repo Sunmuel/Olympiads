@@ -1,0 +1,203 @@
+\documentclass[12pt]{article}
+
+% Specify how big is going to be the paper margins.
+\usepackage[a4paper, margin=1in]{geometry}
+
+% amsmath: Add useful commans like aligh and gather.
+% amsfonts: Add useful fonts like \mathbb{R}.
+% amssymb: Add useful symbles like \therefore (needs amsfonts to work).
+\usepackage{amsmath, amsfonts, amssymb}
+
+% Makes the use of colors possible.
+\usepackage{xcolor}
+
+\definecolor{color1}{HTML}{084a8c}
+\definecolor{color2}{HTML}{487fb7}
+\definecolor{color3}{HTML}{95b7da}
+\definecolor{color4}{HTML}{c9daea}
+
+% Add Latin Modern Fonts like Sans-serif and Roman.
+\usepackage{lmodern}
+
+% Makes header and footer configurable.
+\usepackage{fancyhdr}
+
+% Makes the use of colored and configured tables possible
+\usepackage{tcolorbox}
+
+% Add commands to specify theorems like \newtheorem{x}{y}.
+\usepackage{amsthm}
+
+% Enables enumeration of items.
+\usepackage{enumitem}
+
+% Enables adding images.
+\usepackage{graphicx}
+
+% Enables cool hyper references.
+\usepackage[colorlinks=true, linkcolor=color2, urlcolor=color2, citecolor=color2]{hyperref}
+
+\title{\sffamily\bfseries{Soluções Jacob Palis 2023 N2}}
+\author{Samuel de Araújo Brandão}
+\date{4 de Setembro de 2025}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\sffamily\bfseries{Soluções Jacob Palis 2023 N2}}
+\fancyhead[R]{\textcolor{color2}{Samuel Brandão}, 4 de Setembro de 2025}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14.5pt}
+
+\tcbset{
+  statementbox/.style = {
+    enhanced,
+    width=\textwidth,
+
+    title={Enunciado},
+    titlefilled,
+    fonttitle=\sffamily\bfseries,
+    coltitle=color4
+    colbacktitle=color1,
+
+    colback=white,
+    colframe=color1,
+    boxrule=1pt,
+    arc=2mm,
+    boxsep=2pt,
+  }
+}
+
+\tcbset{
+  theorembox/.style = {
+    enhanced,
+    width=\textwidth,
+
+    colback=white,
+    colframe=color1,
+    boxrule=1pt,
+    arc=2mm,
+    boxsep=2pt
+  }
+}
+
+\tcbset{
+  lemmabox/.style = {
+    enhanced,
+    width=\textwidth,
+
+    colback=white,
+    colframe=color2,
+    boxrule=1pt,
+    arc=2mm,
+    boxsep=2pt
+  }
+}
+
+\renewcommand*\contentsname{\textsf{Conteúdos}}
+\newcommand{\kb}[1]{\left\lfloor #1 \right\rfloor}
+
+\begin{document}
+  \maketitle
+  Uma coleção de soluções para a \textbf{Jacob Palis 2023 Nível 2}, inspirada no estilo de Evan Chen.
+  Pode-se encontrar todos os problemas e respostas oficiais 
+  \textbf{\href{https://www.obm.org.br/content/uploads/2025/04/prova_jacob_palis_2023.pdf}{aqui}}.
+
+  Todas as soluções foram inteiramente escritas por mim, enquanto me preparava para a
+  International Mathematical Olympiad (IMO).
+
+  Caso encontre algum erro ou tiver sugestões ou comentários, sinta-se a vontade 
+  para entrar em contato!
+
+  \tableofcontents
+
+  \clearpage
+
+  \section{\textsf{Problemas}}
+    \subsection{Testes}
+      \begin{enumerate}[label=\textbf{\arabic*.}]
+        \item Ana foi à feira com 20 reais, comprou 3 bananas e 2 peras e recebeu certo valor de troco. Mais tarde, seu irmão João foi ao
+          mesmo local com 29 reais, comprou 5 bananas e 3 peras e também recebeu troco. Depois Maria, mãe de João e Ana, comprou mais uma
+          banana e uma pera. Sabendo que Ana, João e Maria receberam a mesma quantia de troco, quantos reais Maria levou para a feira?
+        \item Regis vai comprar uma capinha personalizada de celular na internet. A capinha custa 100 reais, o frete custa 20 reais e a
+          personalização custa 30 reais. Regis possui dois cupons de desconto, mas só pode usar um deles. O primeiro dá frete grátis e o
+          segundo dá desconto de 20\% no total da compra (capinha, frete e personalização). Se Regis usar o cupom no qual paga o menor valor
+          possível, quanto Regis vai pagar?
+        \item José preencheu um tabuleiro $3\times3$ com os números de 1 a 9 e notou que a soma dos números em \(k\) filas (linhas ou colunas)
+          era ímpar. Quantos são os possíveis valores para \(k\)?
+        \item Qual é o número mínimo de cores necessárias para colorir as bolinhas da figura abaixo de modo que bolinhas ligadas por um
+          segmento tenham cores distintas?
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.3\textwidth]{first.png}
+          \end{figure}
+        \item José escreveu no quadro a igualdade
+          \[
+            2^n + 2^n + \cdots + 2^n = 15360.
+          \]
+          Maria percebeu que havia \(2m+1\) parcelas iguais a \(2^n\) no lado esquerdo, sendo \(m\) um número inteiro. Quanto vale \(m+n\)?
+        \item O número de seis algarismos \(N = (2aaaa6)\) é divisível por 24. A soma dos algarismos de \(N\) é quanto?
+        \item Sendo \(x\) e \(y\) reais tais que
+          \[
+            \frac{x+1}{2^y+1} = \frac{x+2}{2^y+2} = k,
+          \]
+          quanto vale \(k\)?
+        \item De quantas maneiras podemos pintar as letras da palavra JACOB se as vogais devem ser coloridas de azul ou vermelho e as
+          consoantes devem ser coloridas de azul ou verde e, além disso, não podemos ter letras adjacentes com a mesma cor?
+
+        \item As letras \(O, B, M, J, P\) representam algarismos distintos. Sabendo que
+          \[
+            OBM + OBM = JP \cdot JP,
+          \]
+          qual é o valor de \(O+B+M+J+P\)?
+        \item Na figura a seguir, \(ABCD\) é um paralelogramo. Os pontos \(M\) e \(N\) são pontos médios de \(DP\) e \(BP\), respectivamente.
+          Se a área do paralelogramo \(ABCD\) é 24, qual é a área da região sombreada?
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.3\textwidth]{second.png}
+          \end{figure}
+        \item Seja \(X\subset\{1,2,\dots,2023\}\) tal que, se \(a,b\in X\), então \(a+b\) não é múltiplo de 3. Qual é o maior valor possível
+          da quantidade de elementos de \(X\)?
+        \item O número
+          \[
+            \sqrt{2022^2 + 2023^2 + (2022\cdot2023)^2} + \sqrt{2023^2 + 2024^2 + (2023\cdot2024)^2}
+          \]
+          é qual tipo de número (irracional, inteiro e múltiplo de 3, inteiro e múltiplo de 5, inteiro e múltiplo de 8, primo)?
+        \item No triângulo acutângulo \(ABC\), \(AH\) é altura, com \(H\) sobre \(BC\). Sejam \(P\) e \(Q\) as projeções de \(H\) em \(AB\)
+          e \(AC\), respectivamente. Sabendo que \(\angle ABC - \angle ACB = 20^\circ\). Qual é o ângulo agudo determinado pelas retas \(PQ\)
+          e \(AH\)?
+        \item Sejam \(a\) e \(b\) números reais. As raízes da equação \(x^2 - a x + b = 0\) são \(r\) e \(s\), e as raízes da equação
+          \(x^2 - (b+3)x + (a+3) = 0\) são \(1/r\) e \(1/s\). Então \((b+1)^3\) é igual a quê?
+        \item Considere que \(n\) times de futebol jogam exatamente uma vez contra cada um dos outros \(n-1\) times. Em cada partida, o time 
+          vencedor ganha 3 pontos e o perdedor 0; em caso de empate, cada time ganha 1 ponto. Ao fim do campeonato, ordenamos os times por 
+          pontos em ordem decrescente. Para \(n=3\), há sete possibilidades de pontuações dos três times listadas. Para \(n=4\), há quantas
+          possibilidades de pontuação dos quatro times?
+      \end{enumerate}
+    \subsection{Respostas Numéricas}
+      \begin{enumerate}[label=\textbf{\arabic*.}, start=16]
+      \item Se \(a\) e \(b\) são inteiros positivos tais que \(\gcd(a,b) = 6\) e \(\mathrm{lcm}(a,b) = 36a^2\), quanto vale \(a+b\)?
+      \item De quantos modos podemos colorir um tabuleiro \(2\times8\) de modo que cada quadrado unitário seja verde ou amarelo e cada 
+        quadrado \(2\times2\) possua três quadrados unitários de uma cor e o outro da cor oposta?
+      \item No trapézio retângulo \(ABCD\), com \(\angle ABC = \angle BCD = 90^\circ\), a base \(AB\) mede 104 e a base \(CD\) mede 234.
+        Sabendo que a bissetriz do ângulo \(D\) intersects \(BC\) no seu ponto médio, determine a medida do lado \(BC\).
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.25\textwidth]{third.png}
+        \end{figure}
+      \item Um número é chamado de perfeitoso quando nenhum dos seus algarismos é zero e a soma dos seus algarismos é um quadrado perfeito.
+        Por exemplo, 97, 112 e 1111 são números perfeitosos com 2, 3 e 4 algarismos, respectivamente. Luiz escreveu todos os números 
+        perfeitosos de 2023 algarismos. Quantos valores possíveis para a soma dos algarismos dos números da lista?
+      \item A sequência de Fibonacci começa com 1, 1, e cada termo a partir do terceiro é a soma dos dois anteriores. Entre os 100 primeiros 
+        termos, quantos são múltiplos de 3 ou de 4?
+      \end{enumerate}
+
+  \clearpage
+
+  \section{\textsf{Soluções}}
+    \subsection{Testes}
+    \subsection{Respostas Numéricas}
+
+  \clearpage
+
+  \section{\textsf{Referências}}
+\end{document}
