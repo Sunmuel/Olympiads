@@ -1,0 +1,422 @@
+% Enables modern LaTeX compatibility.
+\NeedsTeXFormat{LaTeX2e}
+
+% Name, date and version of the package.
+\ProvidesPackage{handbook}[2025/09/08 v0.1 Olympiad Mathematics macros & enrironments]
+
+% Specify how big is going to be the paper margins.
+\RequirePackage[
+  paperwidth=6in, paperheight=9in,
+  top=0.65in,
+  bottom=0.8in,
+  inner=0.65in,
+  outer=0.65in
+]{geometry}
+
+% amsmath: Add useful commands like aligh and gather.
+% amsfonts: Add useful fonts like \mathbb{R}.
+% amssymb: Add useful symbles like \therefore (needs amsfonts to work).
+% amsthm: Add useful environments like \begin{proof}
+\RequirePackage{amsmath, amsfonts, amssymb, amsthm}
+
+\RequirePackage{xcolor}
+
+\definecolor{a1}{HTML}{21295c}
+\definecolor{a2}{HTML}{1b3b6f}
+\definecolor{a3}{HTML}{065a82}
+\definecolor{a4}{HTML}{1c7293}
+
+\definecolor{g1}{HTML}{003049}
+\definecolor{g2}{HTML}{d62828}
+\definecolor{g3}{HTML}{f77f00}
+\definecolor{g4}{HTML}{fcbf49}
+
+\definecolor{c1}{HTML}{344e41}
+\definecolor{c2}{HTML}{3a5a40}
+\definecolor{c3}{HTML}{588157}
+\definecolor{c4}{HTML}{a3b18a}
+
+\definecolor{n1}{HTML}{450920}
+\definecolor{n2}{HTML}{a53860}
+\definecolor{n3}{HTML}{da627d}
+\definecolor{n4}{HTML}{ffa5ab}
+
+\definecolor{all}{HTML}{EBE9E3}
+
+% Add Latin Modern Fonts like Sans-serif and Roman.
+\RequirePackage{lmodern}
+
+% Makes header and footer configurable.
+\RequirePackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[LE, RO]{\nouppercase{\leftmark}}
+\fancyhead[LO, RE]{\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14.5pt}
+
+% Makes the use of colored and configured tables possible
+\RequirePackage[most]{tcolorbox}
+
+% Enables enumeration of items.
+\RequirePackage{enumitem}
+
+% Enables adding images.
+\RequirePackage{graphicx}
+
+% Enables cool hyper references.
+\RequirePackage[colorlinks=true]{hyperref}
+
+% Enables referencing theorems after its the declaration, for example.
+\RequirePackage[nameinlink,capitalise]{cleveref}
+
+% Enables book covering.
+\RequirePackage{pdfpages}
+
+\renewcommand*\contentsname{\textsf{Contents}}
+
+\setcounter{tocdepth}{1}
+
+% Creates a new command, e.g. \RR works the same as mathbb{R}, but is easier.
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+
+\tcbset{
+  athmbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=a2,
+    coltitle=all,
+    colbacktitle=a1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    boxrule=0.6pt
+  }
+}
+
+\tcbset{
+  alembox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=a2,
+    coltitle=a1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  aexabox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=a1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  anotbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=a1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\newtcbtheorem[auto counter, number within=chapter]{algthm}{Theorem}{athmbox}{algthm}
+\newtcbtheorem[use counter from=algthm]{alglem}{Lemma}{alembox}{alglem}
+\newtcbtheorem[use counter from=algthm]{algcor}{Corollary}{athmbox}{algcor}
+\newtcbtheorem[auto counter, number within=section]{algexa}{Example}{aexabox}{algexa}
+\newtcbtheorem[use counter from=algexa]{algnot}{Note}{anotbox}{algnot}
+
+\tcbset{
+  gthmbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=g2,
+    coltitle=all,
+    colbacktitle=g1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    boxrule=0.6pt
+  }
+}
+
+\tcbset{
+  glembox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=g2,
+    coltitle=g1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  gexabox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=g1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  gnotbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=g1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\newtcbtheorem[auto counter, number within=chapter]{geothm}{Theorem}{gthmbox}{geothm}
+\newtcbtheorem[use counter from=geothm]{geolem}{Lemma}{glembox}{geolem}
+\newtcbtheorem[use counter from=geothm]{geocor}{Corollary}{gthmbox}{geocor}
+\newtcbtheorem[auto counter, number within=section]{geoexa}{Example}{gexabox}{geoexa}
+\newtcbtheorem[use counter from=geoexa]{geonot}{Note}{gnotbox}{geonot}
+
+\tcbset{
+  cthmbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=c2,
+    coltitle=all,
+    colbacktitle=c1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    boxrule=0.6pt
+  }
+}
+
+\tcbset{
+  cdefbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=c2,
+    coltitle=all,
+    colbacktitle=c1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    boxrule=0.6pt
+  }
+}
+
+\tcbset{
+  clembox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=c2,
+    coltitle=c1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  cexabox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=c1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad},
+  }
+}
+
+\tcbset{
+  cnotbox/.style={
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=c4,
+    coltitle=c1,
+    fonttitle=\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\newtcbtheorem[auto counter, number within=chapter]{combothm}{Theorem}{cthmbox}{combothm}
+\newtcbtheorem[auto counter, number within=chapter]{combodef}{Definition}{cdefbox}{combodef}
+\newtcbtheorem[use counter from=combothm]{combolem}{Lemma}{clembox}{combolem}
+\newtcbtheorem[use counter from=combothm]{combocor}{Corollary}{cthmbox}{combocor}
+\newtcbtheorem[auto counter, number within=chapter]{comboexa}{Example}{cexabox}{comboexa}
+\newtcbtheorem[use counter from=comboexa]{combonot}{Note}{cnotbox}{combonot}
+
+\tcbset{
+  nthmbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=n2,
+    coltitle=all,
+    colbacktitle=n1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    boxrule=0.6pt
+  }
+}
+
+\tcbset{
+  nlembox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=n2,
+    coltitle=n1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  nexabox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=n1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\tcbset{
+  nnotbox/.style={
+    enhanced,
+    breakable,
+    colback=all,
+    colframe=all,
+    coltitle=n1,
+    fonttitle=\bfseries\sffamily,
+    before skip=10pt, after skip=10pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    width=\linewidth,
+    attach title to upper,
+    boxrule=0.6pt,
+    after title={\quad}
+  }
+}
+
+\newtcbtheorem[auto counter, number within=chapter]{ntthm}{Theorem}{cthmbox}{ntthm}
+\newtcbtheorem[use counter from=ntthm]{ntlem}{Lemma}{nlembox}{ntlem}
+\newtcbtheorem[use counter from=ntthm]{ntcor}{Corollary}{nthmbox}{ntcor}
+\newtcbtheorem[auto counter, number within=section]{ntexa}{Example}{nexabox}{ntexa}
+\newtcbtheorem[use counter from=ntexa]{ntnot}{Note}{nnotbox}{ntnot}
+
+\crefname{tcb@cnt@algthm}{Theorem}{Theorems}
+\crefname{tcb@cnt@geothm}{Theorem}{Theorems}
+\crefname{tcb@cnt@combothm}{Theorem}{Theorems}
+\crefname{tcb@cnt@ntthm}{Theorem}{Theorems}
+
+\crefname{tcb@cnt@combodef}{Definition}{Definitions}
+
+\crefname{tcb@cnt@alglem}{Lemma}{Lemmas}
+\crefname{tcb@cnt@geolem}{Lemma}{Lemmas}
+\crefname{tcb@cnt@combolem}{Lemma}{Lemmas}
+\crefname{tcb@cnt@ntlem}{Lemma}{Lemmas}
+
+\crefname{tcb@cnt@algcor}{Corollary}{Corollaries}
+\crefname{tcb@cnt@geocor}{Corollary}{Corollaries}
+\crefname{tcb@cnt@combocor}{Corollary}{Corollaries}
+\crefname{tcb@cnt@ntcor}{Corollary}{Corollaries}
+
+\crefname{tcb@cnt@algexa}{Example}{Examples}
+\crefname{tcb@cnt@geoexa}{Example}{Examples}
+\crefname{tcb@cnt@comboexa}{Example}{Examples}
+\crefname{tcb@cnt@ntexa}{Example}{Examples}
+
+\crefname{tcb@cnt@algnot}{Note}{Notes}
+\crefname{tcb@cnt@geonot}{Note}{Notes}
+\crefname{tcb@cnt@combonot}{Note}{Notes}
+\crefname{tcb@cnt@ntnot}{Note}{Notes}

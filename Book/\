@@ -1,0 +1,205 @@
+\chapter{\textsf{Counting Basics}}
+
+\section{Permutations}
+
+A permutation can be defined as the arrangement of objects where the order matters.
+
+\begin{comboexa}{}{}
+  How many ways can one arrange 4 math books, 3 chemistry books, 2 physics
+  books, and 1 biology book on a bookshelf so that all the math books are together, all the
+  chemistry books are together, and all the physics books are together?
+\end{comboexa}
+
+\textcolor{c1}{\textbf{Solution.}} Consider the math books first. There are $4$ possibilities
+for the first book, $3$ possibilities for the second, $2$ possibilities for the third and $1$ 
+for the fourth.
+
+By the \textit{Multiplication Principle}, there are $4 \times 3 \times 2 \times 1 = 4! = 24$ ways to arrange 
+the math books. The symbol ``$!$'' denotes factorial, for integers $n \ge 1$, $n! = n \cdot (n-1) \cdot \ldots \cdot 1$
+
+Similarly, there are $3!$ ways to arrange the chemistry books, $2!$ ways to arrange the physics books and
+only $1!$ way to arrange the biology book. Besides that, there are $4!$ ways to arrange the four subject
+blocks. The order matters, since it is a permutation.
+
+Again, by the Multiplication Principle, one can say that there are
+\[
+  4! \cdot (4! \cdot 3! \cdot 2! \cdot 1!) = 6912
+\]
+ways to arrange the books on the bookshelf.
+
+\begin{combonot}{}{}
+  Do not worry, later problems and solutions are going to be harder than this one, it is only an introduction.
+\end{combonot}
+
+\begin{combonot}{}{}
+  $0! = 1$. This might be a surprise for you, but makes sense, since there is exactly one way to arrange $0$ elements:
+  the empty arrangement.
+\end{combonot}
+
+\begin{comboexa}{}{}
+  From the five letters a,b,c,d,e, how many different 3-letter arrangements without repetition can be formed?
+\end{comboexa}
+This time, we can't use $5!$ or $3!$ directly, but the idea is the same. For the first letter, there are $5$ possibilities,
+$4$ possibilities for the second and $3$ possibilities for the third. In total, there are  $5 \cdot 4 \cdot 3 = 60$.
+This count is the number of $k$-permutations, as you can see in \cref{combodef:permutations}.
+
+\begin{combodef}[label={combodef:permutations}]{Number of Permutations}{}
+  The number of different groups of $k$ objects chosen from a total of $n$ objects with regard to order is equal to
+
+  \[
+    P(n,k) = \frac{n!}{(n-k)!}
+  \]
+
+  When $n,k \in \NN$ and $0 \le k \le n$
+\end{combodef}
+
+\begin{combonot}{}{}
+  You might see the \textit{number of permutations} denoted by ${}_nP_k$ instead of $P(n,k)$ either.
+\end{combonot}
+
+\section{Combinations}
+A combination can be defined as the arrangement of objects where the order does not matter.
+
+\subsection{Binomial Coefficient}
+\begin{combodef}[label={combodef:binom}]{Binomial Coefficient}{}
+  The number of different groups of $k$ objects chosen from a total of $n$ objects without regard to order is equal to
+
+  \[
+    \binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}
+  \]
+
+  when $n \in \NN, k \in \ZZ$ and $0 \le k \le n$. $\binom{n}{k} = 0 \iff k < 0$ or $k > n$ and $\binom{n}{0} = \binom{n}{n} = 1$.
+\end{combodef}
+
+We derive it from $P(n,k)$ by dividing by $k!$, since order is ignored. We have to count $abc$ and $bca$, for example,
+a repetition and divide $P(n,k)$ by $k!$, as we can see in the following.
+
+\begin{combonot}{}{}
+  Choosing $k$ objects is the same as rejecting $n-k$ objects:
+\[
+  \binom{n}{k} = \binom{n}{n - k}
+\]
+\end{combonot}
+
+\begin{comboexa}{}{}
+  How many ways are there to choose $2$ letters from the set $\{a,b,c\}$?
+\end{comboexa}
+
+\textcolor{c1}{\textbf{Solution.}} Let's first demonstrate it using the \cref{combodef:permutations}. $P(3,2) = 6$
+gives $ab$, $ac$, $ba$, $bc$, $ca$, $cb$. Each subset is counted $2!$ times. Divide
+by $2!$. Hence $\binom{3}{2} = 3$. That is exactly what goes behind \cref{combodef:binom}!
+
+\begin{comboexa}[label={comboexa:multinom}]{}{}
+  How many ways are there to divide $9$ people into one committee of $3$, one committee of $4$ and one committee of $2$?
+\end{comboexa}
+
+\textcolor{c1}{\textbf{Solution.}} For the first committee, we decide between $9$ people, so there are $\binom{9}{3} = 84$
+possibilities. Once it is done, there are $6$ people left for the second committee, so there are $\binom{6}{4} = 15$ 
+possibilities. After that, the remainder must go in the third committee. In total, there are $\frac{9!}{3! 4! 2!} =
+84 \cdot 15 = 1260$ ways to divide the $9$ people.
+
+This example illustrates what is called the \textit{multinomial coefficient}:
+
+\subsection{Multinomial Coefficient}
+
+\begin{combodef}[label={combodef:multin}]{Multinomial Coefficient}{}
+  For nonnegative integers $k_1,k_2, \ldots, k_m$ with $k_1+k_2+\cdots+k_m=n$, the multinomial coefficient is
+  defined as
+  \[
+    \binom{n}{k_1,k_2,\ldots,k_m}=\frac{n!}{k_1!k_2!\cdots k_m!}
+  \]
+
+\end{combodef}
+As you can see, the multinomial coefficient is a generalization of the binomial coefficient, where $k_m = n-k$
+and $m=2$.
+
+It would have been easier to solve the \cref{comboexa:multinom} using the multinomial coefficient, as you can see below.
+
+\[
+  \binom{n}{k_1,k_2,\ldots,k_m} = \binom{9}{3, 4, 2} = \frac{9!}{3!4!2!} = 1260.
+\]
+
+Let's finish this section with a really well known example.
+\begin{comboexa}{}{}
+  In how many ways can the letters of the word \texttt{MISSISSIPPI} be arranged?
+\end{comboexa}
+
+Let's use the multinomial coefficient to solve this one. There are 
+\begin{enumerate}[label=\textbullet]
+  \item $1$ letter \texttt{M},
+  \item $4$ letters \texttt{I},
+  \item $4$ letters \texttt{S},
+  \item $2$ letters \texttt{P}.
+\end{enumerate}
+Therefore,
+\[
+  \binom{n}{k_1,k_2,\ldots,k_m} = \binom{11}{1,4,4,2} = \frac{11!}{1!4!4!2!} = 34650
+\]
+
+\section{Pascal's Identity}
+
+\begin{combothm}[label={combothm:pascalthm}]{Pascal's Identity}{}
+  For all $n \ge 1$ and $1 \le k \le n-1$,
+  \[
+    \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}.
+  \]
+\end{combothm}
+
+\begin{proof}
+  It is well known that
+  \[
+    \binom{n-1}{k-1} = \frac{(n-1)!}{(k-1)!(n-k)!} \quad \text{and} \quad \binom{n-1}{k} = \frac{(n-1)!}{k!(n-1-k)}.
+  \]
+  Therefore,
+
+  \begin{align*}
+    \frac{(n-1)!}{(k-1)!(n-k)!} + \frac{(n-1)!}{k!(n-1-k)} & = \frac{(n-1)!k + (n-1)!(n-k)}{k!(n-k)!} \\
+                                                           & = \frac{(n-1)!(k + (n-k))}{k!(n-k)!} \\
+                                                           & = \frac{n!}{k!(n-k)!}. \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{comboexa}{}{}
+  A club has $n$ members. In how many ways can you choose a committee of size $k$ if you separate the cases:
+  \begin{enumerate}[label={\textbullet}]
+    \item one special member (say Alice) is included,
+    \item or Alice is not included?
+  \end{enumerate}
+\end{comboexa}
+
+\textcolor{c1}{\textbf{Solution.}} 
+\begin{enumerate}[label={\textbullet}]
+  \item If Alice is included: choose the other $k-1$ from $n-1$ members, resulting in $\binom{n-1}{k-1}$.
+  \item If Alice is not included: choose the $k$ from $n-1$ members, resulting in $\binom{n-1}{k}$.
+\end{enumerate}
+
+So total:
+\[
+  \binom{n-1}{k-1} + \binom{n-1}{k} = \binom{n}{k}.
+\]
+That is exactly Pascal's Identity in story form.
+
+\begin{combocor}[label={combocor:hockey}]{Hockey-Stick Identity}{}
+\end{combocor}
+
+\begin{combocor}[label={combocor:gridpaths}]{Grid Paths Recursion}{}
+\end{combocor}
+
+\begin{combocor}[label={combocor:vandermonde}]{Vandermonde's Identity}{}
+\end{combocor}
+
+\section{The Binomial Theorem}
+
+\begin{combothm}[label={combothm:binomthm}]{Binomial Theorem}{}
+  For any nonnegative integer $n$ and $x$,$y \in \RR $ or $\CC$
+  \[
+    (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k.
+  \]
+\end{combothm}
+
+\section{Sum of Row}
+\section{Alternating Sum}
+\section{Vandermonde's Identity}
+\section{Hockey-Stick Identity}
+\section{Grid Paths and Recursion}
+\section{Core Applications}
