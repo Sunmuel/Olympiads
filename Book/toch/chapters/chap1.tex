@@ -218,4 +218,96 @@ That is exactly Pascal's Identity in story form.
 \end{combocor}
 
 \section{Pigeonhole Principle}
+
+\begin{combothm}{Pigeonhole Principle}{}
+  If $n+1$ objects are placed into $n$ boxes, then some box contains at least two objects.
+\end{combothm}
+\begin{proof}
+  Supose, for the sake of contradiction, that no box has more than one object. Then each of the $n$ boxes
+  contain at most one object. Hence, the total number of objects would be at most $n$.
+
+  But we assumed there were $n+1$ objects. Contradiction. Therefore, at least one box contains two or more 
+  objects. \qedhere
+\end{proof}
+
+This is indeed a really simple concept, but at the same time, a tremendously important one.
+
+\begin{comboexa}{}{}
+  Choose $7$ different numbers from $\{1,2,\dots,12\}$. Prove that some pair sums to $13$.
+\end{comboexa}
+\textcolor{c1}{\textbf{Solution.}} There are exactly $6$ sums resulting in $13$ using each number of the set
+$\{1,2,\dots,12\}$ exactly once:
+\[
+  1 + 12, \quad 2 + 11, \quad 3 + 10, \quad 4 + 9, \quad 5 + 8, \quad 6 + 7.
+\]
+Since we have to choose $7$ numbers from the set, but there are $6$ sums resulting in $13$, by the Pigeonhole Principle,
+we'll need to choose two numbers from a single sum, and those two sum to $13$.
+
+\begin{comboexa}{}{}
+  Place $5$ points in the unit square. Show two are at distance less than or equal $\frac{\sqrt{2}}{2}$
+\end{comboexa}
+\textcolor{c1}{\textbf{Solution.}} Partition the unit square in four $\frac{1}{2} \cdot \frac{1}{2}$ subsquares.
+Since there are $5$ points and $4$ squares, by the Pigeonhole Principle, a square must contain $2$ points.
+The greatest distance between two points in a subsquare is $\sqrt{\frac{1}{2}^2 + \frac{1}{2}^2} = \frac{\sqrt{2}}{2}$.
+
+
+\begin{comboexa}{}{}
+  In any set of $n+1$ integers, chosen from $\{1,2,\dots,2n\}$, prove that one number divides another.
+\end{comboexa}
+\textcolor{c1}{\textbf{Solution.}} 
+\begin{combolem}{}{}
+  Every positive integer $a$ can be expressed as $2^bc$, where $b = \{x \ge 0 \mid x \in \ZZ^+\}$ and
+  $c = 2y+1$ for some positive integer $y$.
+\end{combolem}
+\begin{proof}
+  Let's split this proof.
+  \begin{itemize}
+    \item $a$ is even: keep dividing $a$ by $2$ as long as the result is even. Eventually, you will stop,
+      because dividing an integer by $2$ cannot go on forever. When you stop, the number you reach must
+      be odd. Call that number $c$.
+    \item $a$ is odd: $b=0$, so $2^b = 1$ and $c=a$. \qedhere
+  \end{itemize}
+\end{proof}
+
+Since there are $n$ odd numbers inside $\{1,2,\dots,2n\}$ and we chose $n+1$ numbers, by the Pigeonhole 
+Principle there must be two numbers that have the same $c$ in $2^bc$. Those two numbers are 
+certainly divisible by each other.
+
+\begin{proof}{}{}
+  Let's say that, WLOG, $b_2<b_1 \implies \frac{2^{b_1}c}{2^{b_2}c} = 2^{b_1-b_2}$, an integer number.
+\end{proof}
+
+\begin{comboexa}{}{}
+  Among $6$ people, prove there exist $3$ mutual acquaintances or $3$ mutual strangers.
+\end{comboexa}
+\textcolor{c1}{\textbf{Solution.}} Let's fix one person, call them $A$. There are $5$ people left. $A$ has
+$5$ possible relations: each of the $5$ others is friend or stranger. By the Pigeonhole Principle, at least
+$3$ of them must fall into the same category (since $5=2\cdot2+1$).
+\begin{itemize}
+  \item $A$ has $3$ friends $B$, $C$, $D$: if any two of $B$, $C$ and $D$ are friends, say $B$ and $C$, then we have a 
+    triangle of friends: $A$, $B$, $C$. If none of them are friends with each other, then $B$, $C$, $D$ are pairwise
+    strangers, so we have a triangle of strangers.
+  \item $A$ has $3$ strangers $E$, $D$, $F$: if any two of $E$, $F$, and $G$ are strangers, then with $A$ we form a 
+    triangle of strangers. If they are all mutual friends, then $E$, $D$ and $F$ form a triangle of friends.
+\end{itemize}
+
+\subsection{Generalized form}
+\begin{combothm}{Generalized Pigeonhole Principle}{}
+  If $n$ objects are distributed among $m$ boxes, then some box contains at least
+  \[
+    \left\lceil \frac{n}{m} \right\rceil
+  \]
+  objects.
+\end{combothm}
+
+\begin{proof}
+  Suppose, for the sake of contradiction, that no box has more than $\left\lfloor \frac{n}{m} \right\rfloor$
+  objects. Then, each of the $m$ boxes contain at most $\left\lceil \frac{n}{m} \right\rceil - 1 = \left\lfloor 
+  \frac{n}{m} \right\rfloor$. Hence, the total number of objects would be at most $m \cdot \left\lfloor 
+  \frac{n}{m} \right\rfloor$.
+
+  But we assumed there were $n$ objects. Contradiction, since $\left\lfloor \frac{n}{m} \right\rfloor < \frac{n}{m}$.
+  Therefore, at least one box contains at least $\left\lceil \frac{n}{m} \right\rceil$ objects. \qedhere
+\end{proof}
+
 \section{Problems}
