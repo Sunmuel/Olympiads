@@ -1,5 +1,5 @@
-% Enables modern LaTeX compatibility.
 \NeedsTeXFormat{LaTeX2e}
+% Enables modern LaTeX compatibility.
 
 % Name, date and version of the package.
 \ProvidesPackage{article}[2025/09/08 v0.1 Olympiad Mathematics macros & enrironments]
@@ -19,7 +19,7 @@
 \definecolor{color2}{HTML}{1b3b6f}
 \definecolor{color3}{HTML}{065a82}
 \definecolor{color4}{HTML}{1c7293}
-\definecolor{color5}{HTML}{dad7cd}
+\definecolor{color5}{HTML}{F0EEE7}
 
 % Add Latin Modern Fonts like Sans-serif and Roman.
 \RequirePackage{lmodern}
@@ -48,19 +48,20 @@
 % Enables book covering.
 \RequirePackage{pdfpages}
 
-\renewcommand*\contentsname{\textsf{Contents}}
+\usepackage[portuguese]{babel}
 
 \newcommand{\olymp}{}
 \newcommand{\olympiad}[1]{\renewcommand{\olympiad}{#1}}
 
 \newcommand{\preface}{
-  This document contains solutions to the \olympiad \ problems, written by me during my preparation for the International 
-  Mathematical Olympiad.
+  Este documento contém soluções para os problemas da \olympiad, escritos por mim durante minha
+  preparação para a Olimpíada Internacional de Matemática.
 
-  The content reflects my own understanding and problem-solving process. Some solutions may have been inspired by the work
-  of others or required external help, in which case proper attribution is given (see \cref{sec:references}). If 
-  you notice any errors or have suggestions for improvement, I would greatly appreciate hearing from you at \\
-  \href{mailto:samuelbaraujo19@gmail.com}{samuelbaraujo19@gmail.com}.
+  O conteúdo reflete meu próprio entendimento e processo de resolução de problemas. Algumas soluções
+  podem ter sido inspiradas pelo trabalho de outras pessoas ou requerido ajuda externa; nesses casos,
+  a devida atribuição é dada (veja a \cref{sec:references}). Se você notar algum erro ou tiver sugestões 
+  de melhoria, eu ficaria muito grato em recebê-las em \ \href{mailto:samuelbaraujo19@gmail.com}
+  {samuelbaraujo19@gmail.com}.
 }
 
 % Creates a new command, e.g. \RR works the same as mathbb{R}, but is easier.
@@ -68,6 +69,14 @@
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\olympiad}
+\fancyhead[R]{\textcolor{color1}{Samuel Brandão}, \today}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14.5pt}
 
 \tcbset{
   statementbox/.style={
@@ -103,7 +112,7 @@
 }
 
 \tcbset{
-  notesbox/.style={
+  observationbox/.style={
     enhanced,
     breakable,
     colback=color5,
@@ -119,6 +128,9 @@
   }
 }
 
-\newtcbtheorem{problem}{Problem Statement}{statementbox}{pro}
-\newtcbtheorem{claim}{Claim}{claimbox}{cla}
-\newtcbtheorem{observation}{Observation}{observationbox}{obs}
+\newtcolorbox{problem}{statementbox, title=Enunciado do Problema}
+\newtcolorbox{claim}{statementbox, title=Alegação}
+\newtcolorbox{observation}{observationbox, title=Observação}
+
+\crefname{section}{seção}{seções}
+\Crefname{section}{Seção}{Seções}
