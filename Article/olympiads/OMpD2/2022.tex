@@ -29,7 +29,7 @@
 
       \begin{figure}[h]
         \centering
-        \includegraphics[width=0.3\textwidth]{first.png}  
+        \includegraphics[width=0.3\textwidth]{img/1.png}  
       \end{figure}
 
       \begin{enumerate}[label=({\alph*})]
@@ -96,7 +96,7 @@
       (T) como abaixo, temos:
 
       \begin{center}
-        \includegraphics[width=0.3\textwidth]{first.png}
+        \includegraphics[width=0.3\textwidth]{img/1.png}
       \end{center}
 
       \begin{enumerate}[label=({\alph*})]
@@ -105,6 +105,24 @@
         \item É possível colocarmos as torres de modo que haja $15$ casas verdes e $15$ amarelas?
       \end{enumerate}
     \end{problem}
+
+    \begin{enumerate}[label=\textbf{({\alph*})}]
+      \item Sim, como pode-se ver a seguinte configuração
+        \begin{center}
+          \includegraphics[width=0.3\textwidth]{img/2.png}
+     \end{center}
+      \item Sim, como pode-se ver a seguinte configuração
+        \begin{center}
+          \includegraphics[width=0.3\textwidth]{img/3.png}
+        \end{center}
+      \item Não. Já que é impossível encontrar um número ímpar de casas verdes.
+        
+        Pode-se provar tal fato ao perceber que existe apenas uma maneira de formar casas verdes:
+        alinhar duas torres diagonalmente, o que resulta em um par de casas verdes únicos, que não
+        podem ser conquistados por meio de nenhuma outra alinhação de torres na diagonal. Ou seja,
+        haverá sempre um número par de casas verdes no tabuleiro, impossibilitando haver 15 casas
+        verdes em tal.
+    \end{enumerate}
 
     \clearpage
 
@@ -117,6 +135,20 @@
       Determine a medida do ângulo $\angle FCE$ e da razão $AD/AB$.
     \end{problem}
 
+    $\angle FCE = 45^{\circ}$ e $\frac{AB}{AD} = 1$.
+
+    É possível encontrar a medida de $\angle FCE$ notando que $\overline{CF}$ é a bissetriz de $\angle EFD$ e $\overline{CE}$
+    é a bissetriz de $\angle BEF$. Já que o ângulo interno total de EFDCB é $540^{\circ}$ e $\angle FDC + \angle DCB + \angle CBE = 270^{\circ}$,
+    pode-se afirmar que $\angle BEF + \angle EFD = 270^{\circ}$, logo, $\angle CEF + \angle EFC = 135^{\circ} \iff \angle FCE = 45^{\circ}$.
+    
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.3\textwidth]{img/4.png}
+    \end{figure}
+
+    Visando encontrar o resultado de $\frac{AD}{AB}$, digamos que $H$ é o pé da altura $\overline{CH}$ relativa a $\overline{EF}$. Podemos afirmar que 
+    $\triangle CBE \cong \triangle CEH$ pelo caso $ALA$. Assim como podemos afirmar, pelo mesmo caso, que $\triangle CHF \cong \triangle CFD$. Essas 
+    similaridades resultam em $\overline{BC} = \overline{CD}$, ou seja, $\overline{AB} = \overline{AD} \iff \frac{AB}{AD}=1$.
     \clearpage
 
     \subsection{Problema 3.}
