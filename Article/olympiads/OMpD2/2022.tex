@@ -198,23 +198,30 @@
       \end{enumerate}
     \end{problem}
 
-    Pela desigualdade AM-GM, sabe-se que
+    \begin{enumerate}[label=\textbf{({\alph*})}]
+      \item a
+      \item
+      Pela desigualdade AM-GM, sabe-se que
+      \[
+        \frac{a^2_i + b_i}{2} \ge a_i\sqrt{b_i}.
+      \]
 
-    \[
-      \frac{a^2_i + b_i}{2} \ge a_i\sqrt{b_i}.
-    \]
+      Portanto,
+      \begin{align*}
+        a_1\sqrt{b_1} + a_2\sqrt{b_2} + a_3\sqrt{b_3} + a_1a_2 + a_2a_3 + a_3a_1 &  \le
+        \frac{a^2_1 + b_1}{2} + \frac{a^2_2 + b_2}{2} + \frac{a^2_3 + b_3}{2} + \\
+                                                                                 & \quad \ a_1a_2 + a_2a_3 + a_3a_1 \\
+                                                                                 & = \frac{a^2_1 + b_1 + a^2_2 + b_2 + a^2_3 + b_3}{2} + \\
+                                                                                 & \quad \ \frac{2a_1a_2 + 2a_2a_3 + 2a_3a_1}{2} \\
+                                                                                 & = \frac{(a_1 + a_2 + a_3)^2 + (b_1 + b_2 + b_3)}{2} \\
+                                                                                 & = 1.
+      \end{align*}
+      Contudo, pode-se ver facilmente que não existe igualdade, já que, se ouvesse, $1 = a_1 + a_2 + a_3 = a^2_1 + a^2_2 + a^3_1$,
+      um absurdo, pois $0 < a_1,a_2,a_3 < 1 \implies a_1 > a^2_1, a_2 > a^2_2, a_3 > a^2_3$.
 
-    Portanto,
-    \begin{align*}
-      a_1\sqrt{b_1} + a_2\sqrt{b_2} + a_3\sqrt{b_3} + a_1a_2 + a_2a_3 + a_3a_1 &  \le
-      \frac{a^2_1 + b_1}{2} + \frac{a^2_2 + b_2}{2} + \frac{a^2_3 + b_3}{2} + a_1a_2 + a_2a_3 + a_3a_1 \\
-                                                                               & = \frac{a^2_1 + b_1 + a^2_2 + b_2 + a^2_3 + b_3 + 2a_1a_2 + 2a_2a_3 + 2a_3a_1}{2} \\
-                                                                               & = \frac{(a_1 + a_2 + a_3)^2 + (b_1 + b_2 + b_3)}{2} \\
-                                                                               & = 1.
-    \end{align*}
-    Contudo, pode-se ver facilmente que não existe igualdade, já que, se ouvesse, $1 = a_1 + a_2 + a_3 = a^2_1 + a^2_2 + a^3_1$,
-    um absurdo, pois $0 < a_1,a_2,a_3 < 1 \implies a_1 > a^2_1, a_2 > a^2_2, a_3 > a^2_3$.
-  \clearpage
+    \end{enumerate}
+
+    \clearpage
 
   \section{Referências}\label{sec:references}
 \end{document}

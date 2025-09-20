@@ -88,6 +88,9 @@
 \tcbset{
   athmbox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=a2,
@@ -104,6 +107,9 @@
 \tcbset{
   alembox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=a2,
@@ -121,6 +127,7 @@
 \tcbset{
   aexabox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -136,8 +143,9 @@
 }
 
 \tcbset{
-  anotbox/.style={
+  aobsbox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -156,11 +164,14 @@
 \newtcbtheorem[use counter from=algthm]{alglem}{Lemma}{alembox}{alglem}
 \newtcbtheorem[use counter from=algthm]{algcor}{Corollary}{athmbox}{algcor}
 \newtcbtheorem[auto counter, number within=section]{algexa}{Example}{aexabox}{algexa}
-\newtcbtheorem[use counter from=algexa]{algnot}{Note}{anotbox}{algnot}
+\newtcbtheorem[use counter from=algexa]{algobs}{Observation}{aobsbox}{algobs}
 
 \tcbset{
   gthmbox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=g2,
@@ -177,6 +188,9 @@
 \tcbset{
   glembox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=g2,
@@ -194,6 +208,7 @@
 \tcbset{
   gexabox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -209,8 +224,9 @@
 }
 
 \tcbset{
-  gnotbox/.style={
+  gobsbox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -229,11 +245,14 @@
 \newtcbtheorem[use counter from=geothm]{geolem}{Lemma}{glembox}{geolem}
 \newtcbtheorem[use counter from=geothm]{geocor}{Corollary}{gthmbox}{geocor}
 \newtcbtheorem[auto counter, number within=section]{geoexa}{Example}{gexabox}{geoexa}
-\newtcbtheorem[use counter from=geoexa]{geonot}{Note}{gnotbox}{geonot}
+\newtcbtheorem[use counter from=geoexa]{geoobs}{Observation}{gobsbox}{geoobs}
 
 \tcbset{
   cthmbox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=c2,
@@ -243,29 +262,16 @@
     before skip=10pt, after skip=10pt,
     left=8pt, right=8pt, top=8pt, bottom=8pt,
     width=\linewidth,
-    boxrule=0.6pt
-  }
-}
-
-\tcbset{
-  cdefbox/.style={
-    enhanced,
-    breakable,
-    colback=all,
-    colframe=c2,
-    coltitle=all,
-    colbacktitle=c1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    boxrule=0.6pt
+    boxrule=0.6pt,
   }
 }
 
 \tcbset{
   clembox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=c2,
@@ -283,6 +289,7 @@
 \tcbset{
   cexabox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -298,8 +305,9 @@
 }
 
 \tcbset{
-  cnotbox/.style={
+  cobsbox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=white,
     colframe=c4,
@@ -315,15 +323,18 @@
 }
 
 \newtcbtheorem[auto counter, number within=chapter]{combothm}{Theorem}{cthmbox}{combothm}
-\newtcbtheorem[auto counter, number within=chapter]{combodef}{Definition}{cdefbox}{combodef}
+\newtcbtheorem[auto counter, number within=chapter]{combodef}{Definition}{cthmbox}{combodef}
 \newtcbtheorem[use counter from=combothm]{combolem}{Lemma}{clembox}{combolem}
 \newtcbtheorem[use counter from=combothm]{combocor}{Corollary}{cthmbox}{combocor}
 \newtcbtheorem[auto counter, number within=chapter]{comboexa}{Example}{cexabox}{comboexa}
-\newtcbtheorem[use counter from=comboexa]{combonot}{Note}{cnotbox}{combonot}
+\newtcbtheorem[use counter from=comboexa]{comboobs}{Observation}{cobsbox}{comboobs}
 
 \tcbset{
   nthmbox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=n2,
@@ -340,6 +351,9 @@
 \tcbset{
   nlembox/.style={
     enhanced,
+    enhanced jigsaw,
+    drop shadow,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=n2,
@@ -357,6 +371,7 @@
 \tcbset{
   nexabox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -372,8 +387,9 @@
 }
 
 \tcbset{
-  nnotbox/.style={
+  nobsbox/.style={
     enhanced,
+    arc=1.4mm,
     breakable,
     colback=all,
     colframe=all,
@@ -392,7 +408,7 @@
 \newtcbtheorem[use counter from=ntthm]{ntlem}{Lemma}{nlembox}{ntlem}
 \newtcbtheorem[use counter from=ntthm]{ntcor}{Corollary}{nthmbox}{ntcor}
 \newtcbtheorem[auto counter, number within=section]{ntexa}{Example}{nexabox}{ntexa}
-\newtcbtheorem[use counter from=ntexa]{ntnot}{Note}{nnotbox}{ntnot}
+\newtcbtheorem[use counter from=ntexa]{ntobs}{Observation}{nobsbox}{ntobs}
 
 \crefname{tcb@cnt@algthm}{Theorem}{Theorems}
 \crefname{tcb@cnt@geothm}{Theorem}{Theorems}
@@ -416,7 +432,7 @@
 \crefname{tcb@cnt@comboexa}{Example}{Examples}
 \crefname{tcb@cnt@ntexa}{Example}{Examples}
 
-\crefname{tcb@cnt@algnot}{Note}{Notes}
-\crefname{tcb@cnt@geonot}{Note}{Notes}
-\crefname{tcb@cnt@combonot}{Note}{Notes}
-\crefname{tcb@cnt@ntnot}{Note}{Notes}
+\crefname{tcb@cnt@algobs}{Observation}{Observations}
+\crefname{tcb@cnt@geoobs}{Observation}{Observations}
+\crefname{tcb@cnt@comboobs}{Observation}{Observations}
+\crefname{tcb@cnt@ntobs}{Observation}{Observations}
