@@ -48,7 +48,7 @@
 % Enables book covering.
 \RequirePackage{pdfpages}
 
-\usepackage[portuguese]{babel}
+\usepackage[portuges]{babel}
 
 \usepackage{caption}
 
@@ -56,15 +56,15 @@
 \newcommand{\olympiad}[1]{\renewcommand{\olympiad}{#1}}
 
 \newcommand{\preface}{
-  Este documento contém soluções para os problemas da \olympiad, escritos por mim durante minha
-  preparação para a Olimpíada Internacional de Matemática.
+	Este documento contém soluções para os problemas da \olympiad, escritos por mim durante minha
+	preparação para a Olimpíada Internacional de Matemática.
 
-  O conteúdo reflete meu próprio entendimento e processo de resolução de problemas. Algumas soluções
-  podem ter sido inspiradas pelo trabalho de outras pessoas ou requerido ajuda externa; nesses casos,
-  a devida atribuição é dada (veja a \cref{sec:references}).
+	O conteúdo reflete meu próprio entendimento e processo de resolução de problemas. Algumas soluções
+	podem ter sido inspiradas pelo trabalho de outras pessoas ou requerido ajuda externa; nesses casos,
+	a devida atribuição é dada (veja a \cref{sec:references}).
 
-  Se você notar algum erro ou tiver sugestões de melhoria, eu ficaria muito grato em recebê-las em \
-  \href{mailto:samuelbaraujo19@gmail.com}{samuelbaraujo19@gmail.com}.
+	Se você notar algum erro ou tiver sugestões de melhoria, eu ficaria muito grato em recebê-las em \
+	\href{mailto:samuelbaraujo19@gmail.com}{samuelbaraujo19@gmail.com}.
 }
 
 % Creates a new command, e.g. \RR works the same as mathbb{R}, but is easier.
@@ -82,57 +82,57 @@
 \setlength{\headheight}{14.5pt}
 
 \tcbset{
-  statementbox/.style={
-    enhanced,
-    breakable,
-    colback=color5,
-    colframe=color2,
-    coltitle=color5,
-    colbacktitle=color1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    boxrule=0.6pt
-  }
+	statementbox/.style={
+			enhanced,
+			breakable,
+			colback=color5,
+			colframe=color2,
+			coltitle=color5,
+			colbacktitle=color1,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			boxrule=0.6pt
+		}
 }
 
 \tcbset{
-  claimbox/.style={
-    enhanced,
-    breakable,
-    colback=color5,
-    colframe=color2,
-    coltitle=color1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    attach title to upper,
-    boxrule=0.6pt,
-    after title={ --- }
-  }
+	claimbox/.style={
+			enhanced,
+			breakable,
+			colback=color5,
+			colframe=color2,
+			coltitle=color1,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			attach title to upper,
+			boxrule=0.6pt,
+			after title={ --- }
+		}
 }
 
 \tcbset{
-  observationbox/.style={
-    enhanced,
-    breakable,
-    colback=color5,
-    colframe=color5,
-    coltitle=color1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    attach title to upper,
-    boxrule=0.6pt,
-    after title={ --- }
-  }
+	observationbox/.style={
+			enhanced,
+			breakable,
+			colback=color5,
+			colframe=color5,
+			coltitle=color1,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			attach title to upper,
+			boxrule=0.6pt,
+			after title={ --- }
+		}
 }
 
 \newtcolorbox{problem}{statementbox, title=Enunciado do Problema}
-\newtcolorbox{claim}{statementbox, title=Alegação}
+\newtcolorbox{claim}{claimbox, title=Alegação}
 \newtcolorbox{observation}{observationbox, title=Observação}
 
 \crefname{section}{seção}{seções}
