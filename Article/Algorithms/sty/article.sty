@@ -54,14 +54,17 @@
 \newcommand{\olympiad}[1]{\renewcommand{\olympiad}{#1}}
 
 \newcommand{\preface}{
-  This document contains solutions to the \olympiad \ problems, written by me during my preparation for the International 
-  Mathematical Olympiad.
+	This document introduces an algorithm designed to guide the process of writing Olympiad
+	mathematics solutions. Its purpose is to provide a clear step-by-step framework that
+	mirrors the structure and reasoning typically used in high-level problem solving.
 
-  The content reflects my own understanding and problem-solving process. Some solutions may have been inspired by the work
-  of others or required external help, in which case proper attribution is given (see \cref{sec:references}).
+	The method is not intended as a substitute for creativity but as a tool to formalize
+	and communicate ideas with clarity. Examples and explanations are provided to
+	illustrate how each stage of the algorithm can be applied in practice, with references
+	included where relevant (see \cref{sec:references}).
 
-  If you notice any errors or have suggestions for improvement, I would greatly appreciate hearing from you at \\
-  \href{mailto:samuelbaraujo19@gmail.com}{samuelbaraujo19@gmail.com}.
+	Feedback is welcome. If you notice inaccuracies or have suggestions for refinement,
+	please contact me at \href{mailto:samuelbaraujo19@gmail.com}{samuelbaraujo19@gmail.com}.
 }
 
 % Creates a new command, e.g. \RR works the same as mathbb{R}, but is easier.
@@ -71,53 +74,55 @@
 \newcommand{\NN}{\mathbb{N}}
 
 \tcbset{
-  statementbox/.style={
-    enhanced,
-    breakable,
-    colback=color5,
-    colframe=color2,
-    coltitle=color5,
-    colbacktitle=color1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    boxrule=0.6pt
-  }
+	statementbox/.style={
+			enhanced,
+			enhanced jigsaw,
+			drop shadow,
+			breakable,
+			colback=color5,
+			colframe=color2,
+			coltitle=color5,
+			colbacktitle=color1,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			boxrule=0.6pt
+		}
 }
 
 \tcbset{
-  claimbox/.style={
-    enhanced,
-    breakable,
-    colback=color5,
-    colframe=color2,
-    coltitle=color1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    attach title to upper,
-    boxrule=0.6pt,
-    after title={ --- }
-  }
+	claimbox/.style={
+			enhanced,
+			breakable,
+			colback=color5,
+			colframe=color2,
+			coltitle=color1,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			attach title to upper,
+			boxrule=0.6pt,
+			after title={ --- }
+		}
 }
 
 \tcbset{
-  notesbox/.style={
-    enhanced,
-    breakable,
-    colback=color5,
-    colframe=color5,
-    coltitle=color1,
-    fonttitle=\bfseries\sffamily,
-    before skip=10pt, after skip=10pt,
-    left=8pt, right=8pt, top=8pt, bottom=8pt,
-    width=\linewidth,
-    attach title to upper,
-    boxrule=0.6pt,
-    after title={ --- }
-  }
+	notesbox/.style={
+			enhanced,
+			breakable,
+			colback=color5,
+			colframe=color5,
+			coltitle=color1,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			attach title to upper,
+			boxrule=0.6pt,
+			after title={ --- }
+		}
 }
 
 \newtcbtheorem{problem}{Problem Statement}{statementbox}{pro}

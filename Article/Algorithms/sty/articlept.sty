@@ -11,7 +11,7 @@
 % amsfonts: Add useful fonts like \mathbb{R}.
 % amssymb: Add useful symbles like \therefore (needs amsfonts to work).
 % amsthm: Add useful environments like \begin{proof}
-\RequirePackage{amsmath, amsfonts, amssymb, amsthm}
+\RequirePackage{amsmath, amsfonts, amssymb, amsthm, mathtools}
 
 \RequirePackage{xcolor}
 
@@ -84,6 +84,8 @@
 \tcbset{
 	statementbox/.style={
 			enhanced,
+			enhanced jigsaw,
+			drop shadow,
 			breakable,
 			colback=color5,
 			colframe=color2,
