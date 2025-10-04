@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+\usepackage{../../../sty/articlept}
+
+\olympiad{OMpD 2024 N2 Fase 2}
+
+\title{\olympiad}
+\author{Samuel de Araújo Brandão}
+\date{\today}
+
+\begin{document}
+\maketitle
+\preface
+
+\tableofcontents
+
+\clearpage
+
+\section{Problemas}
+
+\begin{enumerate}[label={\textbf{\arabic*.}}]
+	\item Sejam $O, M, P, D$ algarismos distintos entre si, e distintos de zero,
+	      tais que $O < M < P < D$ e a seguinte equação é verdadeira:
+	      \[
+		      OMP D \times (OM - D) = MDDMP - OM.
+	      \]
+
+	      \begin{itemize}
+		      \item[(a)] Usando estimativas, explique por que é impossível que o valor de $O$ seja maior do que ou igual a $3$.
+		      \item[(b)] Explique por que $O$ não pode ser igual a $1$.
+		      \item[(c)] É possível termos $M$ maior do que ou igual a $5$? Justifique.
+		      \item[(d)] Determine os valores de $M, P$ e $D$.
+	      \end{itemize}
+
+	      Observação: $X_1X_2 \ldots X_n$ é o número obtido da justaposição
+	      dos algarismos \\ $X_1, X_2, \ldots, X_n$, nessa ordem. Por exemplo,
+	      se $n = 4, X_1 = 2, X_2 = 0, X_3 = 2$ e $X_4 = 2$, então $X_1X_2
+		      \ldots X_n = 2024$.
+	\item Sejam $ABCD$ um quadrilátero convexo, $M, N$ e $P$ os pontos médios das
+	      diagonais $AC$ e $BD$ e do lado $AD$, respectivamente. Suponha também
+	      que $\angle ABC + \angle DCB = 90^\circ$ e que $AB = 6, CD = 8$. Calcule
+	      o perímetro do triângulo $MNP$.
+	\item Uma barata tonta está inicialmente no vértice $A$ de um cubão
+	      $ABCDEFGH$ de aresta medindo $1$ metro, conforme a figura ao lado.
+	      A cada segundo, a barata anda $1$ metro, sempre escolhendo ir para um dos
+	      três vértices adjacentes ao vértice que ela está. Por exemplo, após
+	      $1$ segundo a barata pode parar no vértice $B, D$ ou $E$.
+
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=0.25\textwidth]{../../../img/ompd/6.png}
+	      \end{figure}
+
+	\item Seja $a_0, a_1, a_2, \ldots$ uma sequência infinita de inteiros
+	      positivos com as seguintes propriedades:
+
+	      \begin{itemize}
+		      \item $a_0$ é um inteiro positivo dado;
+		      \item Para cada $n \geq 1$ inteiro, $a_n$ é o menor inteiro maior
+		            do que $a_{n-1}$ de tal modo que $a_n + a_{n-1}$ é um quadrado
+		            perfeito.
+	      \end{itemize}
+
+	      Por exemplo, se $a_0 = 3$, então $a_1 = 6, a_2 = 10, a_3 = 15$ e assim
+	      por diante.
+
+	      \begin{itemize}
+		      \item[(a)] Seja $T$ o conjunto dos números da forma $a_k - a_\ell$, com
+		            $k \geq \ell \geq 0$ inteiros. Demonstre que, independentemente do
+		            valor de $a_0$, o número de inteiros positivos que não estão em
+		            $T$ é finito.
+		      \item[(b)] Calcule, em função de $a_0$, a quantidade de inteiros
+		            positivos que não estão em $T$.
+	      \end{itemize}
+
+\end{enumerate}
+
+\clearpage
+
+\section{Soluções}
+
+\subsection{Problema 1.}
+\begin{problem}
+Sejam $O, M, P, D$ algarismos distintos entre si, e distintos de zero,
+tais que $O < M < P < D$ e a seguinte equação é verdadeira:
+\[
+	OMP D \times (OM - D) = MDDMP - OM.
+\]
+
+\begin{itemize}
+	\item[(a)] Usando estimativas, explique por que é impossível que o valor de $O$ seja maior do que ou igual a $3$.
+	\item[(b)] Explique por que $O$ não pode ser igual a $1$.
+	\item[(c)] É possível termos $M$ maior do que ou igual a $5$? Justifique.
+	\item[(d)] Determine os valores de $M, P$ e $D$.
+\end{itemize}
+
+Observação: $X_1X_2 \ldots X_n$ é o número obtido da justaposição
+dos algarismos \\ $X_1, X_2, \ldots, X_n$, nessa ordem. Por exemplo,
+se $n = 4, X_1 = 2, X_2 = 0, X_3 = 2$ e $X_4 = 2$, então $X_1X_2
+	\ldots X_n = 2024$.
+\end{problem}
+
+\clearpage
+
+\subsection{Problema 2.}
+\begin{problem}
+Sejam $ABCD$ um quadrilátero convexo, $M, N$ e $P$ os pontos médios das
+diagonais $AC$ e $BD$ e do lado $AD$, respectivamente. Suponha também
+que $\angle ABC + \angle DCB = 90^\circ$ e que $AB = 6, CD = 8$. Calcule
+o perímetro do triângulo $MNP$.
+\end{problem}
+
+\clearpage
+
+\subsection{Problema 3.}
+\begin{problem}
+Uma barata tonta está inicialmente no vértice $A$ de um cubão
+$ABCDEFGH$ de aresta medindo $1$ metro, conforme a figura ao lado.
+A cada segundo, a barata anda $1$ metro, sempre escolhendo ir para um dos
+três vértices adjacentes ao vértice que ela está. Por exemplo, após
+$1$ segundo a barata pode parar no vértice $B, D$ ou $E$.
+
+\begin{center}
+	\includegraphics[width=0.25\textwidth]{../../../img/ompd/6.png}
+
+\end{center}
+
+\end{problem}
+
+\clearpage
+
+\subsection{Problema 4.}
+\begin{problem}
+Seja $a_0, a_1, a_2, \ldots$ uma sequência infinita de inteiros
+positivos com as seguintes propriedades:
+
+\begin{itemize}
+	\item $a_0$ é um inteiro positivo dado;
+	\item Para cada $n \geq 1$ inteiro, $a_n$ é o menor inteiro maior
+	      do que $a_{n-1}$ de tal modo que $a_n + a_{n-1}$ é um quadrado
+	      perfeito.
+\end{itemize}
+
+Por exemplo, se $a_0 = 3$, então $a_1 = 6, a_2 = 10, a_3 = 15$ e assim
+por diante.
+
+\begin{itemize}
+	\item[(a)] Seja $T$ o conjunto dos números da forma $a_k - a_\ell$, com
+	      $k \geq \ell \geq 0$ inteiros. Demonstre que, independentemente do
+	      valor de $a_0$, o número de inteiros positivos que não estão em
+	      $T$ é finito.
+	\item[(b)] Calcule, em função de $a_0$, a quantidade de inteiros
+	      positivos que não estão em $T$.
+\end{itemize}
+
+\end{problem}
+
+\clearpage
+
+\section{Referências}\label{sec:references}
+\end{document}
