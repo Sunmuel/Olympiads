@@ -15,10 +15,11 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{color1}{HTML}{3e0f1a}
-\definecolor{color2}{HTML}{6a1024}
-\definecolor{color3}{HTML}{8c2b3a}
-\definecolor{color4}{HTML}{f7f2f3}
+\definecolor{color1}{HTML}{752100}
+\definecolor{color2}{HTML}{B83E0A}
+\definecolor{color3}{HTML}{EC7E00}
+\definecolor{color4}{HTML}{236776}
+\definecolor{color5}{HTML}{FFF1E6}
 
 % Add Latin Modern Fonts like Sans-serif and Roman.
 \RequirePackage{lmodern}
@@ -39,7 +40,7 @@
 \RequirePackage{graphicx}
 
 % Enables cool hyper references.
-\RequirePackage[colorlinks=true, linkcolor=color3, urlcolor=color3, citecolor=color3]{hyperref}
+\RequirePackage[colorlinks=true, linkcolor=color4, urlcolor=color4, citecolor=color4]{hyperref}
 
 % Enables referencing theorems after its the declaration, for example.
 \RequirePackage[nameinlink,capitalise]{cleveref}
@@ -59,7 +60,7 @@
 	The content reflects my own understanding and problem-solving process. Some solutions may have been inspired by the work
 	of others or required external help, in which case proper attribution is given (see \cref{sec:references}).
 
-	If you notice any errors or have suggestions for improvement, I would greatly appreciate hearing from you at \\
+	If you notice any errors or have suggestions for improvement, I would greatly appreciate hearing from you at 
 	\href{mailto:samuelbaraujo19@gmail.com}{samuelbaraujo19@gmail.com}.
 }
 
@@ -69,16 +70,19 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
 
+\newcommand{\cyc}{\sum_{\text{cyc}}}
+\newcommand{\sym}{\sum_{\text{sym}}}
+
 \tcbset{
 	statementbox/.style={
 			enhanced,
 			enhanced jigsaw,
 			drop shadow,
 			breakable,
-			colback=color4,
+			colback=color5,
 			colframe=color2,
-			coltitle=color4,
-			colbacktitle=color1,
+			coltitle=color5,
+			colbacktitle=color2,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
@@ -91,7 +95,7 @@
 	claimbox/.style={
 			enhanced,
 			breakable,
-			colback=color4,
+			colback=color5,
 			colframe=color2,
 			coltitle=color1,
 			fonttitle=\bfseries\sffamily,
@@ -108,8 +112,8 @@
 	notesbox/.style={
 			enhanced,
 			breakable,
-			colback=color4,
-			colframe=color4,
+			colback=color5,
+			colframe=color5,
 			coltitle=color1,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
@@ -121,6 +125,9 @@
 		}
 }
 
-\newtcbtheorem{problem}{Problem Statement}{statementbox}{pro}
-\newtcbtheorem{claim}{Claim}{claimbox}{cla}
-\newtcbtheorem{observation}{Observation}{observationbox}{obs}
+\newtcolorbox{problem}{statementbox, title=Problem Statement}
+\newtcolorbox{claim}{claimbox, title=Claim}
+\newtcolorbox{observation}{observationbox, title=Observation}
+
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}

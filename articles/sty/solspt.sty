@@ -15,10 +15,11 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{color1}{HTML}{3e0f1a}
-\definecolor{color2}{HTML}{6a1024}
-\definecolor{color3}{HTML}{8c2b3a}
-\definecolor{color4}{HTML}{f7f2f3}
+\definecolor{color1}{HTML}{752100}
+\definecolor{color2}{HTML}{B83E0A}
+\definecolor{color3}{HTML}{EC7E00}
+\definecolor{color4}{HTML}{174853}
+\definecolor{color5}{HTML}{FFF1E6}
 
 % Add Latin Modern Fonts like Sans-serif and Roman.
 \RequirePackage{lmodern}
@@ -39,7 +40,7 @@
 \RequirePackage{graphicx}
 
 % Enables cool hyper references.
-\RequirePackage[colorlinks=true, linkcolor=color3, urlcolor=color3, citecolor=color3]{hyperref}
+\RequirePackage[colorlinks=true, linkcolor=color4, urlcolor=color4, citecolor=color4]{hyperref}
 
 % Enables referencing theorems after its the declaration, for example.
 \RequirePackage[nameinlink,capitalise]{cleveref}
@@ -53,6 +54,9 @@
 
 \newcommand{\olymp}{}
 \newcommand{\olympiad}[1]{\renewcommand{\olympiad}{#1}}
+
+\newcommand{\cyc}{\sum_{\text{cyc}}}
+\newcommand{\sym}{\sum_{\text{sym}}}
 
 \newcommand{\preface}{
 	Este documento contém soluções para os problemas da \olympiad, escritos por mim durante minha
@@ -86,9 +90,9 @@
 			enhanced jigsaw,
 			drop shadow,
 			breakable,
-			colback=color4,
+			colback=color5,
 			colframe=color2,
-			coltitle=color4,
+			coltitle=color5,
 			colbacktitle=color2,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
@@ -102,7 +106,7 @@
 	claimbox/.style={
 			enhanced,
 			breakable,
-			colback=color4,
+			colback=color5,
 			colframe=color2,
 			coltitle=color1,
 			fonttitle=\bfseries\sffamily,
@@ -116,11 +120,11 @@
 }
 
 \tcbset{
-	observationbox/.style={
+	notesbox/.style={
 			enhanced,
 			breakable,
-			colback=color4,
-			colframe=color4,
+			colback=color5,
+			colframe=color5,
 			coltitle=color1,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
@@ -132,9 +136,9 @@
 		}
 }
 
-\newtcolorbox{problem}{statementbox, title=Enunciado do Problema}
-\newtcolorbox{claim}{claimbox, title=Alegação}
+\newtcolorbox{problem}{statementbox, title=Enunciado do problema}
+\newtcolorbox{claim}{claimbox, title=Afirmação}
 \newtcolorbox{observation}{observationbox, title=Observação}
 
-\crefname{section}{seção}{seções}
-\Crefname{section}{Seção}{Seções}
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}
