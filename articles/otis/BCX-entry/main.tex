@@ -59,25 +59,81 @@
 
 \subsubsection{USAJMO 2019 P1}
 \begin{problem}
-There are $a+b$ bowls arranged in a row, numbered $1$ through $a+b$, where $a$ and $b$ are given positive integers. Initially, each of the first $a$ bowls contains an apple, and each of the last $b$ bowls contains a pear.
-A legal move consists of moving an apple from bowl $i$ to bowl $i+1$ and a pear from bowl $j$ to bowl $j-1$, provided that the difference $i-j$ is even. We permit multiple fruits in the same bowl at the same time. The goal is to end up with the first $b$ bowls each containing a pear and the last $a$ bowls each containing an apple. Show that this is possible if and only if the product $ab$ is even.
-
+There are $a+b$ bowls arranged in a row, numbered $1$ through $a+b$, where $a$
+and $b$ are given positive integers. Initially, each of the first $a$
+bowls contains an apple, and each of the last $b$ bowls contains a
+pear. A legal move consists of moving an apple from bowl $i$ to bowl $i+1$
+and a pear from bowl $j$ to bowl $j-1$, provided that the difference $i-j$ is
+even. We permit multiple fruits in the same bowl at the same time. The goal is
+to end up with the first $b$ bowls each containing a pear and the last $a$
+bowls each containing an apple. Show that this is possible if and only if the
+product $ab$ is even.
 \end{problem}
 
-\clearpage
+We claim that, in order to reach the desired configuration, $a$ and $b$ cannot
+both be odd; equivalently, $ab$ must be even. We will first show that an even
+product $ab$ always allows us to reach the goal. Then we will prove that the
+desired configuration is impossible when $ab$ is odd.
 
-\subsubsection{PAGMO 2021 P5}
-\begin{problem}
-Celeste has an unlimited amount of each type of $n$ types of candy, numerated type 1, type 2, ... type n. Initially she takes $m>0$ candy pieces and places them in a row on a table. Then, she chooses one of the following operations (if available) and executes it:
+Let $i'$ be the apple originally in bowl $i$ and $j'$ be the pear
+in $j$.
 
-$1.$ She eats a candy of type $k$, and in its position in the row she places one candy type $k-1$ followed by one candy type $k+1$ (we consider type $n+1$ to be type 1, and type 0 to be type $n$).
+\begin{claim}
+	If $i-j$ is even, then $i'$ can always be swapped with $j'$.
+\end{claim}
 
-$2.$ She chooses two consecutive candies which are the same type, and eats them.
+\begin{proof}
+	WLOG assume $i<j$. After $n$ legal moves, $i'$ and $j'$ are in bowls $i+n$ and
+	$j-n$, respectively. Since $i-j$ is even, $n=\frac{j-i}{2}$ is an integer.
+	Therefore, $i'$ and $j'$ meet at
+	\[
+		i+n=j-n=\frac{i+j}{2}.
+	\]
+	After that, $i'$ can move to $\frac{i+j}{2}+n$ to reach $j$ and $j'$ to
+	$\frac{i+j}{2}-n$ to reach $i$.
+\end{proof}
 
-Find all positive integers $n$ for which Celeste can leave the table empty for any value of $m$ and any configuration of candies on the table.
+Now suppose $ab$ is even.
 
-\end{problem}
+\begin{itemize}
+	\item If $\min(a,b)=1$, say $a=1$, then $b$ must be even for $ab$ to be even.
+	      Therefore the bowls $1$ and $a+b$ can be swapped, because $(a+b)-1$ is
+	      even.
+	\item If $\min(a,b)\ge 2$
+	      \begin{itemize}
+		      \item and $a+b$ is odd, $(a+b)-1$ is even, so the first and the last
+		            bowls can be swapped. Therefore, $ab$ can be reduced to $(a-1)
+			            (b-1)$ since the bowls $1$ and $a+b$ already have the desired
+		            fruits, which is still even. Thus, by complete induction, $a+b$
+		            odd works, since $(a-1)+(b-1)$ is smaller than $a+b$.
+		      \item and $a+b$ is even, $(a+b)-2$ and $(a+b-1)-1$ are even. $a$ and $b$
+		            are both even numbers, because if they were both odd numbers, $ab$
+		            wouldn't be even. So the
+		            second and the last bowls can be swapped, as the first and
+		            penultimate bowls. Therefore, we can reduce $ab$ to $(a-1)(b-1)$,
+		            which is still even, since the bowls $1$, $2$, $a+b-1$ and $a+b$
+		            already have the desired fruits. Thus, by complete induction,
+		            $a+b$ even works, since $(a-2)+(b-2)$ is smaller than $a+b$.
+	      \end{itemize}
+\end{itemize}
+Hence, when $ab$ is even, we can reach the desired goal.
 
+Now, by the sake of contradiction, say $ab$ is odd. Let $A$ be the amount of
+apples in the first odd-numbered bowls and $B$ of pears in the last odd-numbered
+$b$ bowls. We already know that $i$ and $j$ must have parity in order to $i-j$ be
+even. Therefore $A$ and $B$ are invariants, because after a legal move, $i'$ and
+$j'$ must keep having parity, so $A$ and $B$ are always going to each decrease by
+$1$ or increase by $1$.
+
+Since $A-B$ is invariant, the remainder must always be equal, regardless of the fruits'
+order (apples first, then pears, or pears first, then apples). Since $a$ is odd,
+but $a+b$ is even, $A=\frac{a+1}{2}$ and $B=\frac{b-1}{2}$ originally, but after
+the swaps, $A=\frac{a-1}{2}$ and $B=\frac{b+1}{2}$. Consequently,
+\[
+	\frac{a+1}{2}-\frac{b-1}{2}=\frac{a-1}{2}-\frac{b+1}{2}\iff\frac{a-b+2}{2}=
+	\frac{a-b-2}{2}\iff 2=-2
+\]
+Contradiction! Hence, we can reach the desired goal if and only if $ab$ is even.
 \clearpage
 
 \subsubsection{Shortlist 2012 C1}
@@ -103,6 +159,20 @@ How many different non-equivalent ways can Steve pile the stones on the grid?
 \subsubsection{USAMO 2011 P2}
 \begin{problem}
 An integer is assigned to each vertex of a regular pentagon so that the sum of the five integers is 2011. A turn of a solitaire game consists of subtracting an integer $m$ from each of the integers at two neighboring vertices and adding $2m$ to the opposite vertex, which is not adjacent to either of the first two vertices. (The amount $m$ and the vertices chosen can vary from turn to turn.) The game is won at a certain vertex if, after some number of turns, that vertex has the number 2011 and the other four vertices have the number 0. Prove that for any choice of the initial integers, there is exactly one vertex at which the game can be won.
+\end{problem}
+
+\clearpage
+
+\subsubsection{PAGMO 2021 P5}
+\begin{problem}
+Celeste has an unlimited amount of each type of $n$ types of candy, numerated type 1, type 2, ... type n. Initially she takes $m>0$ candy pieces and places them in a row on a table. Then, she chooses one of the following operations (if available) and executes it:
+
+$1.$ She eats a candy of type $k$, and in its position in the row she places one candy type $k-1$ followed by one candy type $k+1$ (we consider type $n+1$ to be type 1, and type 0 to be type $n$).
+
+$2.$ She chooses two consecutive candies which are the same type, and eats them.
+
+Find all positive integers $n$ for which Celeste can leave the table empty for any value of $m$ and any configuration of candies on the table.
+
 \end{problem}
 
 \clearpage
