@@ -4,6 +4,9 @@
 % Name, date and version of the package.
 \ProvidesPackage{handbook}[2025/09/08 v0.1 Olympiad Mathematics macros & enrironments]
 
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
 % Specify how big is going to be the paper margins.
 \RequirePackage[
 	paperwidth=6in, paperheight=9in,
@@ -26,9 +29,10 @@
 \definecolor{amber}{HTML}{fb8b24}
 \definecolor{burnt}{HTML}{e36414}
 \definecolor{teal}{HTML}{0f4c5c}
-\definecolor{white}{HTML}{fffdf7}
+\definecolor{white}{HTML}{fff7e5}
+\definecolor{white2}{HTML}{f3e7d3}
+\definecolor{white3}{HTML}{e0d0bc}
 \definecolor{black}{HTML}{1e1528}
-
 
 % Add Latin Modern Fonts like Sans-serif and Roman.
 \RequirePackage{lmodern}
@@ -36,7 +40,6 @@
 % Makes header and footer configurable.
 \RequirePackage{fancyhdr}
 
-\pagestyle{fancy}
 \fancyhf{}
 
 \fancyhead[LE, RO]{\nouppercase{\leftmark}}
@@ -59,8 +62,13 @@
 % Enables referencing theorems after its the declaration, for example.
 \RequirePackage[nameinlink,capitalise]{cleveref}
 
+\hypersetup{linkcolor=teal, urlcolor=teal, citecolor=teal}
+
 % Enables book covering.
 \RequirePackage{pdfpages}
+
+\usepackage{emoji}
+\usepackage{fontspec}
 
 \renewcommand*\contentsname{\textsf{Contents}}
 
@@ -73,16 +81,16 @@
 \newcommand{\NN}{\mathbb{N}}
 
 \tcbset{
-	athmbox/.style={
+	theorembox/.style={
 			enhanced,
 			enhanced jigsaw,
-			drop shadow,
+			drop shadow=white3,
 			arc=1.4mm,
 			breakable,
-			colback=all,
-			colframe=****,
-			coltitle=all,
-			colbacktitle=****,
+			colback=white,
+			colframe=amber,
+			coltitle=white,
+			colbacktitle=amber,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
@@ -92,15 +100,50 @@
 }
 
 \tcbset{
-	alembox/.style={
+	problembox/.style={
+			enhanced,
+			drop shadow=white3,
+			arc=1.4mm,
+			breakable,
+			colback=white,
+			colframe=amber,
+			coltitle=white,
+			colbacktitle=amber,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			boxrule=0.6pt
+		}
+}
+
+\tcbset{
+	claimbox/.style={
+			enhanced,
+			breakable,
+			colback=white,
+			colframe=amber,
+			coltitle=burnt,
+			fonttitle=\bfseries\sffamily,
+			before skip=10pt, after skip=10pt,
+			left=8pt, right=8pt, top=8pt, bottom=8pt,
+			width=\linewidth,
+			attach title to upper,
+			boxrule=0.6pt,
+			after title={ --- }
+		}
+}
+
+\tcbset{
+	lemmabox/.style={
 			enhanced,
 			enhanced jigsaw,
 			drop shadow,
 			arc=1.4mm,
 			breakable,
-			colback=all,
-			colframe=****,
-			coltitle=****,
+			colback=white,
+			colframe=amber,
+			coltitle=burnt,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
@@ -112,51 +155,38 @@
 }
 
 \tcbset{
-	aexabox/.style={
+	examplebox/.style={
 			enhanced,
 			arc=1.4mm,
 			breakable,
-			colback=all,
-			colframe=all,
-			coltitle=****,
+			colback=white,
+			colframe=white,
+			coltitle=burnt,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
 			width=\linewidth,
 			attach title to upper,
 			boxrule=0.6pt,
-			after title={\quad}
+			after title={ --- }
 		}
 }
 
-\tcbset{
-	aobsbox/.style={
-			enhanced,
-			arc=1.4mm,
-			breakable,
-			colback=all,
-			colframe=all,
-			coltitle=****,
-			fonttitle=\bfseries\sffamily,
-			before skip=10pt, after skip=10pt,
-			left=8pt, right=8pt, top=8pt, bottom=8pt,
-			width=\linewidth,
-			attach title to upper,
-			boxrule=0.6pt,
-			after title={\quad}
-		}
-}
+\newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theorembox}{theorem}
+\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{theorembox}{lemma}
+\newtcbtheorem[use counter from=theorem]{corollary}{Corollary}{theorembox}{corollary}
+\newtcbtheorem[use counter from=theorem]{examplebox}{Example}{examplebox}{example}
 
-\newtcbtheorem[auto counter, number within=chapter]{thm}{Theorem}{thmbox}{thm}
-\newtcbtheorem[use counter from=thm]{lem}{Lemma}{lembox}{lem}
-\newtcbtheorem[use counter from=thm]{cor}{Corollary}{thmbox}{cor}
-\newtcbtheorem[auto counter, number within=section]{exa}{Example}{exabox}{exa}
-\newtcbtheorem[use counter from=exa]{obs}{Observation}{obsbox}{obs}
+\newtcolorbox{problem}{problembox, title=Problem Statement}
+\newtcolorbox{claim}{claimbox, title=Claim}
+\newtcolorbox{observation}{examplebox, title=Observation}
+\newtcolorbox{insight}{examplebox, title={\footnotesize \emoji{bulb}}  Insight}
 
-\crefname{tcb@cnt@thm}{Theorem}{Theorems}
-\crefname{tcb@cnt@def}{Definition}{Definitions}
-\crefname{tcb@cnt@lem}{Lemma}{Lemmas}
-\crefname{tcb@cnt@cor}{Corollary}{Corollaries}
-\crefname{tcb@cnt@exa}{Example}{Examples}
-\crefname{tcb@cnt@obs}{Observation}{Observations}
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}
 
+\crefname{tcb@cnt@theorem}{Theorem}{Theorems}
+% \crefname{tcb@cnt@definition}{Definition}{Definitions}
+\crefname{tcb@cnt@lemma}{Lemma}{Lemmas}
+\crefname{tcb@cnt@corollary}{Corollary}{Corollaries}
+\crefname{tcb@cnt@example}{Example}{Examples}
