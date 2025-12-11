@@ -15,11 +15,15 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{color1}{HTML}{752100}
-\definecolor{color2}{HTML}{B83E0A}
-\definecolor{color3}{HTML}{EC7E00}
-\definecolor{color4}{HTML}{174853}
-\definecolor{color5}{HTML}{FFF1E6}
+\definecolor{wine}{HTML}{5f0f40}
+\definecolor{red}{HTML}{9a031e}
+\definecolor{amber}{HTML}{fb8b24}
+\definecolor{burnt}{HTML}{e36414}
+\definecolor{teal}{HTML}{0f4c5c}
+\definecolor{white}{HTML}{fff7e5}
+\definecolor{white2}{HTML}{f3e7d3}
+\definecolor{white3}{HTML}{e0d0bc}
+\definecolor{black}{HTML}{1e1528}
 
 % Add Latin Modern Fonts like Sans-serif and Roman.
 \RequirePackage{lmodern}
@@ -40,7 +44,7 @@
 \RequirePackage{graphicx}
 
 % Enables cool hyper references.
-\RequirePackage[colorlinks=true, linkcolor=color4, urlcolor=color4, citecolor=color4]{hyperref}
+\RequirePackage[colorlinks=true, linkcolor=teal, urlcolor=teal, citecolor=teal]{hyperref}
 
 % Enables referencing theorems after its the declaration, for example.
 \RequirePackage[nameinlink,capitalise]{cleveref}
@@ -87,13 +91,12 @@
 \tcbset{
 	statementbox/.style={
 			enhanced,
-			enhanced jigsaw,
-			drop shadow,
+			drop shadow=white3,
 			breakable,
-			colback=color5,
-			colframe=color2,
-			coltitle=color5,
-			colbacktitle=color2,
+			colback=white,
+			colframe=amber,
+			coltitle=white,
+			colbacktitle=amber,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
@@ -106,9 +109,9 @@
 	claimbox/.style={
 			enhanced,
 			breakable,
-			colback=color5,
-			colframe=color2,
-			coltitle=color1,
+			colback=white,
+			colframe=amber,
+			coltitle=burnt,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
@@ -120,12 +123,12 @@
 }
 
 \tcbset{
-	notesbox/.style={
+	observationbox/.style={
 			enhanced,
 			breakable,
-			colback=color5,
-			colframe=color5,
-			coltitle=color1,
+			colback=white,
+			colframe=white,
+			coltitle=burnt,
 			fonttitle=\bfseries\sffamily,
 			before skip=10pt, after skip=10pt,
 			left=8pt, right=8pt, top=8pt, bottom=8pt,
@@ -136,9 +139,9 @@
 		}
 }
 
-\newtcolorbox{problem}{statementbox, title=Enunciado do problema}
+\newtcolorbox{problem}{statementbox, title=Enunciado do Problema}
 \newtcolorbox{claim}{claimbox, title=Afirmação}
 \newtcolorbox{observation}{observationbox, title=Observação}
 
-\crefname{section}{section}{sections}
-\Crefname{section}{Section}{Sections}
+\crefname{section}{seção}{seções}
+\Crefname{section}{Seção}{Seções}

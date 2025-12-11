@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{../../../sty/sols}
+
+\olympiad{\textsf{\textbf{USAJMO 2016}}}
+
+\title{\olympiad}
+\author{Samuel de Araújo Brandão}
+\date{\today}
+
+\begin{document}
+\maketitle
+\preface
+
+\tableofcontents
+
+\clearpage
+
+\section{\textsf{Problems}}
+\begin{enumerate}[label={\textbf{\arabic*.}}]
+	\item Find, with proof, the least integer $N$ such that if any $2016$ elements are
+	      removed from the set ${1, 2,...,N}$, one can still find $2016$ distinct numbers
+	      among the remaining elements with sum $N$.
+\end{enumerate}
+
+\clearpage
+
+\section{\textsf{Solutions}}
+
+\begin{problem}
+Find, with proof, the least integer $N$ such that if any $2016$ elements are
+removed from the set ${1, 2,...,N}$, one can still find $2016$ distinct numbers
+among the remaining elements with sum $N$.
+\end{problem}
+
+\begin{claim}
+	badfals
+\end{claim}
+
+\begin{observation}
+	adfadf
+\end{observation}
+
+The least integer $N$ that satisfies the statement is
+\[
+	\sum^{4032}_{i=2017} i = 6049 \cdot 1008 = 6097392.
+\]
+
+Notice that if we form pairs of numbers from the set with equal sum, there will be
+at least $3024$ such pairs. Even if at most $2016$ pairs are destroyed, there will
+still remain at least $1008$ pairs with equal sum, i.e., $2016$ numbers. Each pair
+consists of the $x$th number from the left and the $x$th number from the right.
+This way, each pair has sum $6048+1$ as in $(1,6048), (2,6047), \dots, (3024,3025)$.
+$6049 \cdot 1008 = 6097392$.
+
+$N$ can't be less than $6,097,392$ because the least possible sum is
+\[
+	\sum^{2016}_{i=1} i=2033136.
+\]
+However, the first $2016$ numbers of the set can be removed, changing the least
+possible sum to
+\[
+	\sum^{4032}_{i=2017} i = 6097392.
+\]
+
+\clearpage
+
+\section{\textsf{References}}\label{sec:references}
+\end{document}
