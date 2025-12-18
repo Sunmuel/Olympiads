@@ -13,6 +13,10 @@
 % amsthm: Add useful environments like \begin{proof}
 \RequirePackage{amsmath, amsfonts, amssymb, amsthm}
 
+\usepackage{fontspec}
+\usepackage{emoji}
+\setmainfont{Latin Modern Roman}
+
 \RequirePackage{xcolor}
 
 \definecolor{wine}{HTML}{5f0f40}
@@ -79,6 +83,9 @@
 
 \newcommand{\cyc}{\sum_{\text{cyc}}}
 \newcommand{\sym}{\sum_{\text{sym}}}
+
+\newcommand{\prodcyc}{\prod_{\text{cyc}}}
+\newcommand{\prodsym}{\prod_{\text{sym}}}
 
 \tcbset{
 	statementbox/.style={

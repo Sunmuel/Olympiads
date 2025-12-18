@@ -2,19 +2,15 @@
 \NeedsTeXFormat{LaTeX2e}
 
 % Name, date and version of the package.
-\ProvidesPackage{handbook}[2025/09/08 v0.1 Olympiad Mathematics macros & enrironments]
+\ProvidesPackage{article}[2025/09/08 v0.1 Olympiad Mathematics macros & enrironments]
 
 \usepackage{fontspec}
+\usepackage{emoji}
 \setmainfont{Latin Modern Roman}
 
 % Specify how big is going to be the paper margins.
-\RequirePackage[
-	paperwidth=6in, paperheight=9in,
-	top=0.65in,
-	bottom=0.8in,
-	inner=0.65in,
-	outer=0.65in
-]{geometry}
+
+\RequirePackage[a4paper, margin=2.0cm]{geometry}
 
 % amsmath: Add useful commands like aligh and gather.
 % amsfonts: Add useful fonts like \mathbb{R}.
@@ -40,12 +36,12 @@
 % Makes header and footer configurable.
 \RequirePackage{fancyhdr}
 
-\fancyhf{}
+%\fancyhf{}
 
-\fancyhead[LE, RO]{\nouppercase{\leftmark}}
-\fancyhead[LO, RE]{\nouppercase{\rightmark}}
-\fancyfoot[C]{\thepage}
-\setlength{\headheight}{14.5pt}
+%\fancyhead[LE, RO]{\nouppercase{\leftmark}}
+%\fancyhead[LO, RE]{\nouppercase{\rightmark}}
+%\fancyfoot[C]{\thepage}
+%\setlength{\headheight}{14.5pt}
 
 % Makes the use of colored and configured tables possible
 \RequirePackage[most]{tcolorbox}
@@ -82,6 +78,9 @@
 
 \newcommand{\cyc}{\sum_{\text{cyc}}}
 \newcommand{\sym}{\sum_{\text{sym}}}
+
+\newcommand{\prodcyc}{\prod_{\text{cyc}}}
+\newcommand{\prodsym}{\prod_{\text{sym}}}
 
 \tcbset{
 	theorembox/.style={
@@ -175,7 +174,7 @@
 		}
 }
 
-\newtcbtheorem[auto counter, number within=chapter]{theorem}{Theorem}{theorembox}{theorem}
+\newtcbtheorem[auto counter, number within=section]{theorem}{Theorem}{theorembox}{theorem}
 \newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{theorembox}{lemma}
 \newtcbtheorem[use counter from=theorem]{corollary}{Corollary}{theorembox}{corollary}
 \newtcbtheorem[use counter from=theorem]{examplebox}{Example}{examplebox}{example}

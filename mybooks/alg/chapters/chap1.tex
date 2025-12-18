@@ -1,4 +1,3 @@
-\chapter{\textsf{Basic Inequalities}}
 \section{\textsf{Replacements}}
 \subsection{\textsf{abc=1}}
 If $abc=1$, replacing $a$, $b$, $c$ with $\frac{x}{y}$, $\frac{y}{z}$,
@@ -12,26 +11,196 @@ $y+z$, $z+x$,$x+y$.
 \section{\textsf{Schur's Inequality}}
 Let $a$,$b$,$c$ be nonnegative real numbers and $r>0$ be positive real
 number. Then
-
 \[
 	\cyc a^r(a^2+bc) \ge \cyc a^{r+1}(b+c).
 \]
-
 Equality occurs if $a=b=c$ or $a=b$ and $c=0$ and permutations.
 
 For example, when $r=1$:
-
 \[
 	\cyc (a^3+abc) \ge \cyc a^2b.
 \]
 
 An easier way to write the Schur's Inequality is the following:
-
 \[
 	\cyc a^r(a-b)(a-c) \ge 0.
 \]
+By the way, using this form of the Schur's Inequality, we can even prove it.
+Say WLOG, that $a \ge b \ge c$. It can be done because it is a symmetrical
+sum over $a$,$b$,$c$. Therefore, $(a-b)$ is positive, as is $(a-c)$. \qed
 
-\section{\textsf{Hölder Inequality}}
-\section{\textsf{Cauchy}}
-\subsection{\textsf{Cauchy-Schwarz}}
-\subsection{\textsf{Titu's Lemma}}
+\begin{examplebox}{}{}
+	Prove
+	\[
+		a^2+b^2+c^2+(abc)^{\frac{1}{3}}\sqrt{\frac{ab+bc+ca}{3}} \ge \frac{4}
+		{3}(ab+bc+ca).
+	\]
+\end{examplebox}
+
+\textbf{\textcolor{burnt}{Solution.}}
+
+\begin{align*}
+	a^2+b^2+c^2+(abc)^{\frac{1}{3}}\sqrt{\frac{ab+bc+ca}{3}} & \ge \frac{a^2+b^2+c^2}{3} + (abc)^{\frac{2}{3}} \\ & \ge
+	\frac{1}{3} \sym a^{\frac{4}{3}}b^{\frac{2}{3}}                                                            \\ & \ge
+	\frac{2}{3} \cyc ab.
+\end{align*}
+Moreover,
+\[
+	\frac{2}{3}(a^2+b^2+c^2) + \frac{2}{3}(ab+bc+ca) \ge \frac{2}{3}(ab+bc+ca) + \frac{2}{3}(ab+bc+ca)
+\]
+
+\begin{insight}
+	The hardest and most important step here is dividing $a^2+b^2+c^2$ by $3$, and
+	later, using the Schur's Inequality. In order to notice it, you needed to see
+	that $(abc)^{\frac{1}{3}}$ by itself is weak and doesn't help much. Therefore,
+	using a fraction of $a^2+b^2+c^2$ to ``complete" it, would be really helpful.
+	However, the Schur step is harder to notice without a previous pattern
+	recognition. Nevertheless, it is still possible to see that
+	$a^2=(a^{\frac{2}{3}})^3$ and $a^{\frac{4}{3}}b^{\frac{2}{3}} = (a^2b)^{\frac{2}{3}}$
+\end{insight}
+
+\section{Weighted Power Mean}
+
+Let $a_1, \dots, a_n$ and $w_1,\dots,w_n$ be positive real numbers, where $w_1+\dots+w_n=1$.
+Besides that, let $r$ be any real number. Therefore,
+
+\[
+	P(r) =
+	\begin{cases}
+		(w_1a^r_1+\dots+w_na_n^r)^{\frac{1}{r}} \iff r \neq 0 \\
+		a_1^{w_1}\dots a_n^{w_n} \iff r =0.
+	\end{cases}
+\]
+
+If $s>r$, $P(s)>P(r)$.
+
+\begin{examplebox}{\textcolor{teal}{Taiwan TST 2014}}{}
+	Let $a$,$b$,$c >0$. Prove that
+	\[
+		3(a+b+c) \ge 8\sqrt[3]{abc} + \sqrt[3]{\frac{a^3+b^3+c^3}{3}}
+	\]
+\end{examplebox}
+\textbf{\textcolor{burnt}{Solution.}} First, divide everything by $9$ and raise everything to
+the power of $3$. Therefore, we gotta prove
+\[
+	\left(\frac{1}{3}(a+b+c)\right)^3 \ge \left(\frac{8}{9}(abc)^{\frac{1}{3}}+\frac{1}{9}\left(\frac{a^3+b^3+c^3}{3}\right)^
+	{\frac{1}{3}}\right)^3.
+\]
+However, by the Weighted Power Mean,
+
+\[
+	\left(\frac{8}{9}(abc)^{\frac{1}{3}}+\frac{1}{9}\left(\frac{a^3+b^3+c^3}{3}\right)^{\frac{1}{3}}\right)^3 \le
+	\frac{8}{9}(abc)+\frac{1}{9}\left(\frac{a^3+b^3+c^3}{3}\right).
+\]
+Hence, we must prove that
+
+\[
+	\left(\frac{(a+b+c)}{3}\right)^3 \ge \frac{24abc+a^3+b^3+c^3}{27} \iff (a+b+c)^3 \ge 24abc+a^3+b^3+c^3. \qed
+\]
+
+\subsubsection{A5}
+\begin{problem}
+If $a$, $b$ ,$c$ are three positive real numbers such that $ab+bc+ca = 1$, prove that\[ \sqrt[3]{ \frac{1}{a} + 6b} + \sqrt[3]{\frac{1}{b} + 6c} + \sqrt[3]{\frac{1}{c} + 6a } \leq \frac{1}{abc}.  \]
+\end{problem}
+
+\textbf{\textcolor{amber}{First solution}} After homogenizing the inequality, we must prove that
+
+\begin{align*}
+	 & \cyc \sqrt[3]{\frac{(ab+bc+ca)^2}{a}+6b(ab+bc+ca)} & =   \\
+	 & \cyc \sqrt[3]{\frac{(ab+bc+ca)(7ab+bc+ca)}{a}}     & \le \\
+	 & \frac{(ab+bc+ca)^2}{abc}.
+\end{align*}
+By the Hölder's inequality,
+\begin{align*}
+	\left(\cyc \sqrt[3]{\frac{(ab+bc+ca)(7ab+bc+ca)}{a}}\right)^3 \le \left(\cyc ab+bc+ca\right)\left(\cyc 7ab+bc+ca\right)\left(\cyc \frac{1}{a}\right).
+\end{align*}
+Therefore, it suffices to prove the following.
+\begin{align*}
+	\left(\cyc ab+bc+ca\right)\left(\cyc 7ab+bc+ca\right)\left(\cyc \frac{1}{a}\right) & \le \frac{(ab+bc+ca)^6}{(abc)^3}. & \iff \\
+	\frac{24(ab+bc+ca)^3}{abc}                                                         & \le \frac{(ab+bc+ca)^6}{(abc)^3}  & \iff \\
+	24(abc)^2                                                                          & \le (ab+bc+ca)^3                  & \iff \\
+	2\sqrt[3]{3}(abc)^{\frac{2}{3}}                                                    & \le ab+bc+ca.
+\end{align*}
+By the AM-GM inequality, $ab+bc+ca \ge 3(abc)^{\frac{2}{3}}$. Hence, we must prove that $3 \ge 2\sqrt[3]{3}$.
+Which is true, since $27>24$.
+
+Consequently,
+\[
+	\frac{1}{abc} \ge \cyc \sqrt[3]{\frac{1}{a} +6b}.
+\]
+
+\textbf{\textcolor{amber}{Second solution, \href{https://artofproblemsolving.com/community/c6h30865p23434282}{found by DottedCalculator}}} By the Hölder's inequality,
+\begin{align*}
+	\left(\cyc \left(\frac{1}{a}+6b\right)\right)\left(\cyc 1\right)^2 & \ge \left(\cyc \sqrt[3]{\frac{1}{a}+6b}\right)^3.
+	% \sqrt[3]{54(a+b+c)+9\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right)} & \ge\cyc \sqrt[3]{\frac{1}{a}+6b}.
+\end{align*}
+Therefore, it suffices to prove that
+\begin{align*}
+	\frac{1}{(abc)^3} \ge 54(a+b+c)+9\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right) \iff
+	1 \ge 54(abc)^3(a+b+c) + 9(abc)^2 = \\
+	9(abc)^2(6abc(a+b+c)+1)
+\end{align*}
+since $ab+bc+ca=1$.
+
+By the AM-GM inequality, $\frac{1}{27} \ge (abc)^2$, and by the Titu's Lemma, $a^2b^2+b^2c^2+c^2a^2 \ge \frac{(ab+bc+ca)^2}{3} = \frac{1}{3}$.
+Hence, $9(abc)^2 \le \frac{1}{3}$ and $6abc(a+b+c)+1 \le 3$. It happens because
+\begin{align*}
+	6abc(a+b+c)+1 = 3(ab+bc+ca)^2 -3(a^2b^2+b^2c^2+c^2a^2)+1=4-3(a^2b^2+b^2c^2+c^2a^2).
+\end{align*}
+Thus,
+\begin{align*}
+	1 \ge 9(abc)^2(6abc(a+b+c)+1).
+\end{align*}
+Consequently,
+\begin{align*}
+	\frac{1}{abc} \ge \cyc \sqrt[3]{\frac{1}{a} +6b}.
+\end{align*}
+\subsubsection{IMO 2000 P2}
+\begin{problem}
+Let $ a, b, c$ be positive real numbers so that $ abc = 1$. Prove that
+\[
+	\left( a - 1 + \frac 1b \right) \left( b - 1 + \frac 1c \right) \left( c - 1 + \frac 1a \right) \leq 1.
+\]
+\end{problem}
+
+\textbf{\textcolor{amber}{First solution}} Since $abc=1$, let $a=\frac{x}{y}$, $b=\frac{y}{z}$ and $c=\frac{z}{x}$. Therefore, it suffices to prove that
+\[
+	\prodcyc \left(\frac{x}{y}-1+\frac{z}{y}\right) = \prodcyc \left(\frac{x-y+z}{y}\right) \le 1 \iff
+	\prodcyc \left(x-y+z\right) \le xyz.
+\]
+Let $u=x-y+z$,$v=y-z+x$ and $w=z-x+y$. Hence, it is enough to show that
+\[
+	uvw \le \frac{(u+v)(v+w)(w+u)}{8},
+\]
+which is true by AM-GM. Thus,
+\[
+	\prodcyc \left( a - 1 + \frac 1b \right) \le 1.
+\]
+
+\textbf{\textcolor{amber}{Second solution}} Since $abc=1$, let $a=\frac{x}{y}$, $b=\frac{y}{z}$ and $c=\frac{z}{x}$. Therefore, it suffices to prove that
+\[
+	\prodcyc \left(\frac{x}{y}-1+\frac{z}{y}\right) = \prodcyc \left(\frac{x-y+z}{y}\right) \le 1 \iff
+	\prodcyc \left(x-y+z\right) \le xyz.
+\]
+Now, notice that
+\[
+	\prodcyc \left(x-y+z\right) = \sym x^2y -2xyz -x^3-y^3-z^3.
+\]
+Hence, it is enough to show that
+\[
+	\sym x^2y -x^3-y^3-z^3 \le 3xyz,
+\]
+which is true by the Schur's inequality. Thus,
+\[
+	\prodcyc \left( a - 1 + \frac 1b \right) \le 1.
+\]
+
+\begin{insight}
+	$a=\frac{x}{y}$, $b=\frac{y}{z}$ and $c=\frac{z}{x}$ is the best possible strategy when $abc=1$, always remember that.
+
+	Both the Schur's and the AM-GM methods didn't come to my mind, even though they were really easy. I feel that the
+	Schur's method didn't come to my mind only because I was lazy, because it was so easy. However, the AM-GM method was
+	harder. I have been noticing a pattern that follows like this: an equality must obligatorily be true in order for the
+	question to be true. Hence, if it easy, basically every ineq you know should be tested, just because those inequalities
+	seems to be easy.
+\end{insight}

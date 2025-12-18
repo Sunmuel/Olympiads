@@ -7,6 +7,10 @@
 % Specify how big is going to be the paper margins.
 \RequirePackage[a4paper, margin=2.0cm]{geometry}
 
+\usepackage{fontspec}
+\usepackage{emoji}
+\setmainfont{Latin Modern Roman}
+
 % amsmath: Add useful commands like aligh and gather.
 % amsfonts: Add useful fonts like \mathbb{R}.
 % amssymb: Add useful symbles like \therefore (needs amsfonts to work).
@@ -71,6 +75,9 @@
 
 \newcommand{\cyc}{\sum_{\text{cyc}}}
 \newcommand{\sym}{\sum_{\text{sym}}}
+
+\newcommand{\prodcyc}{\prod_{\text{cyc}}}
+\newcommand{\prodsym}{\prod_{\text{sym}}}
 
 \tcbset{
 	statementbox/.style={
