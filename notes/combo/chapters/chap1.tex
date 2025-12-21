@@ -1,0 +1,146 @@
+\subsection{\textsf{Problems}}
+
+\subsubsection{USAJMO 2019 P1}
+
+\begin{problem}
+There are $a+b$ bowls arranged in a row, numbered $1$ through $a+b$, where $a$
+and $b$ are given positive integers. Initially, each of the first $a$
+bowls contains an apple, and each of the last $b$ bowls contains a
+pear. A legal move consists of moving an apple from bowl $i$ to bowl $i+1$
+and a pear from bowl $j$ to bowl $j-1$, provided that the difference $i-j$ is
+even. We permit multiple fruits in the same bowl at the same time. The goal is
+to end up with the first $b$ bowls each containing a pear and the last $a$
+bowls each containing an apple. Show that this is possible if and only if the
+product $ab$ is even.
+\end{problem}
+
+We claim that, in order to reach the desired configuration, $a$ and $b$ cannot
+both be odd; equivalently, $ab$ must be even. We will first show that an even
+product $ab$ always allows us to reach the goal. Then we will prove that the
+desired configuration is impossible when $ab$ is odd.
+
+Let $i'$ be the apple originally in bowl $i$ and $j'$ be the pear
+in $j$.
+
+\begin{claim}
+	If $i-j$ is even, then $i'$ can always be swapped with $j'$.
+\end{claim}
+
+\begin{proof}
+	WLOG assume $i<j$. After $n$ legal moves, $i'$ and $j'$ are in bowls $i+n$ and
+	$j-n$, respectively. Since $i-j$ is even, $n=\frac{j-i}{2}$ is an integer.
+	Therefore, $i'$ and $j'$ meet at
+	\[
+		i+n=j-n=\frac{i+j}{2}.
+	\]
+	After that, $i'$ can move to $\frac{i+j}{2}+n$ to reach $j$ and $j'$ to
+	$\frac{i+j}{2}-n$ to reach $i$.
+\end{proof}
+
+Now suppose $ab$ is even.
+
+\begin{itemize}
+	\item If $\min(a,b)=1$, say $a=1$, then $b$ must be even for $ab$ to be even.
+	      Therefore the bowls $1$ and $a+b$ can be swapped, because $(a+b)-1$ is
+	      even.
+	\item If $\min(a,b)\ge 2$
+	      \begin{itemize}
+		      \item and $a+b$ is odd, $(a+b)-1$ is even, so the first and the last
+		            bowls can be swapped. Therefore, $ab$ can be reduced to $(a-1)
+			            (b-1)$ since the bowls $1$ and $a+b$ already have the desired
+		            fruits, which is still even. Thus, by complete induction, $a+b$
+		            odd works, since $(a-1)+(b-1)$ is smaller than $a+b$.
+		      \item and $a+b$ is even, $(a+b)-2$ and $(a+b-1)-1$ are even. $a$ and $b$
+		            are both even numbers, because if they were both odd numbers, $ab$
+		            wouldn't be even. So the
+		            second and the last bowls can be swapped, as the first and
+		            penultimate bowls. Therefore, we can reduce $ab$ to $(a-1)(b-1)$,
+		            which is still even, since the bowls $1$, $2$, $a+b-1$ and $a+b$
+		            already have the desired fruits. Thus, by complete induction,
+		            $a+b$ even works, since $(a-2)+(b-2)$ is smaller than $a+b$.
+	      \end{itemize}
+\end{itemize}
+Hence, when $ab$ is even, we can reach the desired goal.
+
+Now, by the sake of contradiction, say $ab$ is odd. Let $A$ be the amount of
+apples in the first odd-numbered bowls and $B$ of pears in the last odd-numbered
+$b$ bowls. We already know that $i$ and $j$ must have parity in order to $i-j$ be
+even. Therefore $A$ and $B$ are invariants, because after a legal move, $i'$ and
+$j'$ must keep having parity, so $A$ and $B$ are always going to each decrease by
+$1$ or increase by $1$.
+
+Since $A-B$ is invariant, the remainder must always be equal, regardless of the fruits'
+order (apples first, then pears, or pears first, then apples). Since $a$ is odd,
+but $a+b$ is even, $A=\frac{a+1}{2}$ and $B=\frac{b-1}{2}$ originally, but after
+the swaps, $A=\frac{a-1}{2}$ and $B=\frac{b+1}{2}$. Consequently,
+\[
+	\frac{a+1}{2}-\frac{b-1}{2}=\frac{a-1}{2}-\frac{b+1}{2}\iff\frac{a-b+2}{2}=
+	\frac{a-b-2}{2}\iff 2=-2
+\]
+Contradiction! Hence, we can reach the desired goal if and only if $ab$ is even.
+
+\begin{insight}
+	I am proud of myself because this is the first serious combinatorics problem I
+	solved, even though there were a lot of mistakes in my original solution.
+
+	\begin{itemize}
+		\item Lack of rigorosity. I understand now that writing more to make the
+		      solution more comprehensible is good. However, time matters a lot in
+		      an olympiad context. Therefore, solving all the problems before actually
+		      writing the solutions seems to be the best thing to do. This way, I can
+		      keep track of my time better, understand if I can or not be that rigorous.
+		      Another thing about writing solutions is being more "mathematician".
+		      What I mean is that writing solutions mathematically is often faster
+		      and more understandable.
+		\item Learned about induction, an awesome tool to use when an iteration or
+		      anything related must be demonstrated. In this problem, we needed to show
+		      that an specific configuration could only be obtained when $ab$ were even.
+		      However, notice how many iterations and steps there are here!
+		\item Learned about invariants either. Can be used in a similar way. Usually
+		      when something changes a lot, there is another thing that actually never
+		      changes, which can be useful to find contradictions.
+	\end{itemize}
+\end{insight}
+
+\clearpage
+
+\subsubsection{USAJMO 2016 P4}
+\begin{problem}
+Find, with proof, the least integer $N$ such that if any $2016$ elements are
+removed from the set ${1, 2,...,N}$, one can still find $2016$ distinct numbers
+among the remaining elements with sum $N$.
+\end{problem}
+
+The least integer $N$ that satisfies the statement is
+\[
+	\sum^{4032}_{i=2017} i = 6049 \cdot 1008 = 6097392.
+\]
+
+Notice that if we form pairs of numbers from the set with equal sum, there will be
+at least $3024$ such pairs. Even if at most $2016$ pairs are destroyed, there will
+still remain at least $1008$ pairs with equal sum, i.e., $2016$ numbers. Each pair
+consists of the $x$th number from the left and the $x$th number from the right.
+This way, each pair has sum $6048+1$ as in $(1,6048), (2,6047), \dots, (3024,3025)$.
+$6049 \cdot 1008 = 6097392$.
+
+$N$ can't be less than $6,097,392$ because the least possible sum is
+\[
+	\sum^{2016}_{i=1} i=2033136.
+\]
+However, the first $2016$ numbers of the set can be removed, changing the least
+possible sum to
+\[
+	\sum^{4032}_{i=2017} i = 6097392.
+\]
+
+\begin{insight}
+	The most important idea that didn't came to my mind was forming pairs with equal
+	sum, since I had already thought about lower bound $N \ge \sum^{2016}_{i=1}i$
+	(not entirely correct, but almost there). It feels like the biggest problem
+	was focusing more on doing something instead of thinking about what to do.
+	Therefore, from now on it is really important to think better about what I am
+	going to do before just doing.
+\end{insight}
+
+\clearpage
+

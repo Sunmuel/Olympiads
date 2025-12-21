@@ -1,0 +1,303 @@
+\documentclass[12pt]{article}
+\usepackage{../../../sty/solspt}
+
+\olympiad{OMpD 2023 N2 Fase 2}
+
+\title{\olympiad}
+\author{Samuel de Araújo Brandão}
+\date{\today}
+
+\begin{document}
+\maketitle
+\preface
+
+\tableofcontents
+
+\clearpage
+
+\section{Problemas}
+\begin{enumerate}[label={\textbf{\arabic*.}}]
+	\item Alguns amigos internautas formaram $6$ equipes de futebol, e decidiram realizar
+	      um torneio onde cada equipe enfrenta outra exatamente uma vez em uma partida.
+	      Em cada partida, quem vence ganha $3$ pontos, quem perde não ganha ponto,
+	      e se as duas equipes empatarem, cada uma leva $1$ ponto.
+
+	      Ao final do torneio, verificou-se que as pontuações das equipes foram
+	      $10, 9, 6, 6, 4$ e $2$ pontos. A respeito deste torneio, responda os
+	      seguintes itens, justificando sua resposta em cada um deles.
+
+	      \begin{itemize}
+		      \item[(a)] Quantas partidas terminaram empatadas no torneio?
+		      \item[(b)] Determine, para cada um das $6$ equipes, o número de vitórias, empates e derrotas.
+		      \item[(c)] Se considermos apenas as partidas disputadas entre a equipe que fez $9$ pontos contra as duas equipes que fizeram $6$ pontos, e a disputada entre as duas equipes que fizeram $6$ pontos, explique porque dentre essas três partidas, há pelo menos $2$ empates.
+	      \end{itemize}
+	\item Encontre todos os pares $a,b$ de números reais tais que o número
+	      $\lfloor an + b \rfloor$ é um quadrado perfeito, para todo inteiro positivo
+	      $n$.
+
+	      Observação: $\lfloor x \rfloor$ é o maior inteiro menor ou igual a $x$.
+	      Por exemplo, $\lfloor 4 \rfloor = 4$, $\lfloor -5 \rfloor
+		      = -5$, $\lfloor \pi \rfloor = 3$, $\lfloor \frac{1+\sqrt{5}}{2} \rfloor
+		      = 1$ e $\lfloor -2,7 \rfloor = -3$.
+	\item Para cada inteiro positivo $x$, seja $\varphi(x)$ o número de inteiros
+	      $1 \leq k \leq x$ que não possuem fatores primos em comum com $x$. Por
+	      exemplo, $\varphi(12) = 4$, pois $1, 5, 7$ e $11$ são todos os
+	      números naturais menores ou iguais a $12$ que não possuem fatores
+	      primos em comum com $12$. Determine todos os inteiros positivos
+	      $n$ tais que existem inteiros positivos distintos $a_1,a_2,\ldots
+		      ,a_n$ de modo que o conjunto:
+	      \[
+		      S = \{a_1, a_2, \ldots, a_n, \varphi(a_1), \varphi(a_2), \ldots, \varphi(a_n)\}
+	      \]
+	      possui exatamente $2n$ inteiros consecutivos (em alguma ordem).
+	\item Seja $ABC$ um triângulo acutângulo escaleno, e seja $O$ seu
+	      circuncentro. Seja $K$ um ponto sobre o lado $BC$. A reta $OK$ intersecta
+	      o circuncírculo do triângulo $BOC$ novamente em $M$. Seja $L$ o simétrico
+	      de $K$ relativo a $AC$. Demonstre que os circuncírculos dos triângulos
+	      $LCM$ e $ABC$ são tangentes se, e somente se, $AK \perp BC$.
+\end{enumerate}
+
+\clearpage
+
+\section{Soluções}
+\subsection{Problema 1.}
+\begin{problem}
+Alguns amigos internautas formaram $6$ equipes de futebol, e decidiram realizar
+um torneio onde cada equipe enfrenta outra exatamente uma vez em uma partida.
+Em cada partida, quem vence ganha $3$ pontos, quem perde não ganha ponto,
+e se as duas equipes empatarem, cada uma leva $1$ ponto.
+
+Ao final do torneio, verificou-se que as pontuações das equipes foram
+$10, 9, 6, 6, 4$ e $2$ pontos. A respeito deste torneio, responda os
+seguintes itens, justificando sua resposta em cada um deles.
+
+\begin{itemize}
+	\item[(a)] Quantas partidas terminaram empatadas no torneio?
+	\item[(b)] Determine, para cada um das $6$ equipes, o número de vitórias, empates e derrotas.
+	\item[(c)] Se considermos apenas as partidas disputadas entre a equipe que fez $9$ pontos contra as duas equipes que fizeram $6$ pontos, e a disputada entre as duas equipes que fizeram $6$ pontos, explique porque dentre essas três partidas, há pelo menos $2$ empates.
+\end{itemize}
+\end{problem}
+
+\begin{enumerate}[label=(\textbf{\alph*})]
+	\item 8 partidas terminaram em empate.
+
+	      É trivial perceber isso ao notar que, já que existem $6$ times e cada
+	      time jogou contra exatos $5$ times, houveram $5+4+3+2+1=15$ partidas no total.
+	      Portanto, caso não houvessem empates na partida, o total de pontos seria
+	      $15\cdot3=45$ pontos. Mas pode-se ver que foram distribuídos apenas $10+
+		      9+6+6+4+2=37$ pontos no total. Ou seja, $45-37=8$ pontos ``sumiram''.
+	      Já que apenas $2$ pontos são distribuídos a cada empate, houveram $(3-2)\cdot8=8$
+	      empates.
+	\item Sejam os times $A$, $B$, $C$, $D$, $E$ e $F$ aqueles que pontuaram, respectivamente,
+	      $10$, $9$, $6$, $6$, $4$, $2$. Abaixo encontra-se a única possível configuração,
+	      onde $V$ = vitória, $E$ = empate e $D$ = derrota.
+
+	      \begin{itemize}
+		      \item Time $A$: $3V$, $1E$, $1D$
+		      \item Time $B$: $2V$, $3E$, $0D$
+		      \item Time $C$: $1V$, $3E$, $1D$
+		      \item Time $D$: $1V$, $3E$, $1D$
+		      \item Time $E$: $0V$, $4E$, $1D$
+		      \item Time $F$: $0V$, $2E$, $3D$
+	      \end{itemize}
+
+	      Nenhuma outra configuração é válida por não cumprir todas as seguintes
+	      obrigações indispensáveis:
+
+	      \begin{itemize}
+		      \item todos os times devem jogar $5$ partidas,
+		      \item devem haver $8$ empates entre $15$ partidas totais,
+		      \item o time A deve ganhar $3$ partidas, empatar $1$ e perder $1$,
+		      \item o time F deve empatar $2$ partidas e perder $3$,
+		      \item o time E deve empatar $4$ partidas e perder $1$, já que, caso
+		            ganhe $1$, empate $1$ e perca $3$, os times $B$, $C$ e $D$
+		            teriam que ganhar, no total, $12$ pontos provenientes de empates,
+		            uma tarefa claramente impossível, já que cada um desses times deve
+		            ganhar, no máximo, $3$ pontos culminados de empate,
+		      \item $B$, $C$ e $D$, devem ganhar, cada um, $3$ pontos provenientes de
+		            empate.
+	      \end{itemize}
+
+	\item Sabe-se que o tanto de empates do grupo $1$: $A$, $E$ e $F$ é $1+4+2=7$, e o
+	      tanto de empates do grupo $2$: $B$, $C$ e $D$ é $3+3+3=9$ empates.
+	      É fato que a partida entre $E$ e $F$ terminou em empate. Portanto,
+	      $A$ empatou,no máximo, com $1$ time do grupo $2$, $E$ empatou, no máximo,
+	      com $3$ times do grupo $2$ e $F$ empatou, no máximo, com $1$ time
+	      do grupo $2$. Logo, houverão, no máximo, $1+3+2=5$ empates entre os grupos
+	      $1$ e $2$. Logo entre os times do grupo $2$, houveram, no mínimo, $(9-5)
+		      \cdot \frac{1}{2}=2$ empates, já que cada partida empatada resulta em
+	      dois times participantes de um empate.
+\end{enumerate}
+
+\clearpage
+
+\subsection{Problema 2.}
+\begin{problem}
+Encontre todos os pares $a,b$ de números reais tais que o número
+$\lfloor an + b \rfloor$ é um quadrado perfeito, para todo inteiro positivo
+$n$.
+
+Observação: $\lfloor x \rfloor$ é o maior inteiro menor ou igual a $x$.
+Por exemplo, $\lfloor 4 \rfloor = 4$, $\lfloor -5 \rfloor
+	= -5$, $\lfloor \pi \rfloor = 3$, $\lfloor \frac{1+\sqrt{5}}{2} \rfloor
+	= 1$ e $\lfloor -2,7 \rfloor = -3$.
+
+\end{problem}
+
+Apenas os pares $(a,b)=(0,b)$, onde $b\in[m^2,m^2+1)$ e $m\in\ZZ$
+
+Perceba, primeiramente, que para todo $n$, existe $m \in \ZZ$ tal que
+$\lfloor an + b \rfloor = m^2$. Para isso, é trivial perceber que basta sempre
+anular $n$ e fazer com que $b\in[m^2,m^2+1)$. Ou seja, $a=0$.
+
+Perceba que essa é a única configuração possível, já que:
+\begin{itemize}
+	\item $a<0$: é impossível, pois, basta que $n > \frac{b}{\mid a\mid}$, resultando em
+	      $\lfloor an + b \rfloor < 0$. Portanto, nunca será um quadrado perfeito.
+	\item $a>0$: também é impossível. Visando contradição, seja $x^2_n \coloneqq \lfloor an + b \rfloor$ com $x_n \in \ZZ$.
+	      Deve-se perceber que $x_{n+1} \ge x_n+1$ para infinitos $n$, já que,
+	      caso contrário, a sequência ficaria constante a partir de algum momento.
+	      Isso é impossível porque $a>0$. Podemos ver que
+	      a diferença entre termos consecutivos nos mostra algo bem interessante:
+	      \[
+		      x^2_{n+1}-x^2_n = \lfloor an + a + b \rfloor - \lfloor an + b \rfloor.
+	      \]
+	      Como vimos anteriormente, $x_{n+1} \ge x_n+1$ para infinitos $n$.
+	      Portanto,
+	      \[
+		      x^2_{n+1}-x^2_n \ge (x_n + 1)^2-x^2_n = 2x_n + 1.
+	      \]
+	      Agora, para finalizar, perceba que $\lfloor an + a + b \rfloor \le
+		      an + a + b$ e $\lfloor an + b \rfloor > an + b - 1$. Portanto,
+	      \[
+		      \lfloor an + a + b \rfloor - \lfloor an + b \rfloor < an + a + b -
+		      an - b + 1 = a + 1 \iff 2x_n+1 < a + 1.
+	      \]
+	      Contradição! É impossível que $2x_n+1$ seja cotado por $a+1$,
+	      já que $x_n \to \infty$.
+\end{itemize}
+Portanto, nos resta apenas os pares $(a,b)=(0,b)$, onde $b\in[m^2,m^2+1)$ e $m\in\ZZ$
+
+\begin{observation}
+	O mais complicado foi realmente mostrar que $a>0$ é impossível. Para tanto,
+	foi de extrema importância conhecer o seguinte padrão:
+	geralmente, quando é dito ``válido para todos os $n$'' é bem
+	importante comparar termos consecutivos. Para tanto, foi
+	relativamente trivial perceber que $x_{n+1} \ge x_n+1$ para
+	infinitos $n$.
+\end{observation}
+
+\begin{observation}
+	Após comparar os termos consecutivos, existe outro padrão muito
+	recorrente que deveríamos conhecer:
+	\[
+		\lfloor r + s \rfloor - \lfloor r \rfloor \le \lfloor s \rfloor + 1 =
+		\lceil s \rceil.
+	\]
+	Após isso, ficou relativamente fácil, já que é trivial perceber que
+	\[
+		x^2_{n+1} - x^2_n < a +1,
+	\]
+	e relembrar que $x_{n+1} \ge x_n+1$, culminando em
+	$x^2_{n+1}-x^2_n \ge (x_n + 1)^2-x^2_n = 2x_n + 1$.
+
+\end{observation}
+
+
+\clearpage
+
+\subsection{Problema 3.}
+\begin{problem}
+Para cada inteiro positivo $x$, seja $\varphi(x)$ o número de inteiros
+$1 \leq k \leq x$ que não possuem fatores primos em comum com $x$. Por
+exemplo, $\varphi(12) = 4$, pois $1, 5, 7$ e $11$ são todos os
+números naturais menores ou iguais a $12$ que não possuem fatores
+primos em comum com $12$. Determine todos os inteiros positivos
+$n$ tais que existem inteiros positivos distintos $a_1,a_2,\ldots
+	,a_n$ de modo que o conjunto:
+\[
+	S = \{a_1, a_2, \ldots, a_n, \varphi(a_1), \varphi(a_2), \ldots, \varphi(a_n)\}
+\]
+possui exatamente $2n$ inteiros consecutivos (em alguma ordem).
+\end{problem}
+
+\clearpage
+
+\subsection{Problema 4.}
+\begin{problem}
+Seja $ABC$ um triângulo acutângulo escaleno, e seja $O$ seu
+circuncentro. Seja $K$ um ponto sobre o lado $BC$. A reta $OK$ intersecta
+o circuncírculo do triângulo $BOC$ novamente em $M$. Seja $L$ o simétrico
+de $K$ relativo a $AC$. Demonstre que os circuncírculos dos triângulos
+$LCM$ e $ABC$ são tangentes se, e somente se, $AK \perp BC$.
+\end{problem}
+Permita $\measuredangle$ denotar ângulos orientados.
+
+Para provar que $(LCM)$ e $(ABC)$ são tangentes se, e somente se, $AK \perp BC$,
+devemos demonstrar que existe uma reta que tangencia as duas circunferências
+em $C$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{../../../img/sols/ompd/5.jpeg}
+\end{figure}
+
+\begin{claim}
+	$\triangle CLM \sim \triangle AKO$ pelo caso $LAL$.
+\end{claim}
+
+\begin{proof}
+	Sabe-se que $CMBO$ é um quadrilátero cíclico, já que seus vértices \\
+	são concíclicos em $(BCO)$. Portanto, torna-se trivial perceber que
+	$\frac{BO}{CM}=\frac{BK}{KM}=\frac{KO}{CK}$, ou seja, $\frac{AO}{CM}
+		=\frac{OK}{CL}$. Além disso, sabemos que
+	\[
+		\measuredangle LCM = \measuredangle LCK + \measuredangle KCM = 2
+		\measuredangle ACK + \measuredangle BOK = \measuredangle AOB +
+		\measuredangle BOK = \measuredangle AOK. \qedhere
+	\]
+\end{proof}
+
+\begin{claim}
+	O ponto antipodal em relação a $O$ pertence à tangente de $(ABC)$.
+\end{claim}
+
+\begin{proof}
+	Chamemos o pé da mediatriz do lado $\overline{BC}$ de $N$. A reta
+	$\overline{NO}$ intersecta $(BCO)$ novamente em $O'$, sendo esse
+	o ponto antipodal em relação a $O$. Já que $OO'$ é um diâmetro
+	de tal circunferência, $\measuredangle O'CO = 90^{\circ}$.
+	Portanto, $\overline{CO'}$ tangencia $(ABC)$.
+\end{proof}
+
+Agora, para provar que $(LCM)$ e $(ABC)$ são tangentes se,
+e somente se, $AK \perp BC$, devemos demonstrar que $\measuredangle MCO' =
+	\measuredangle MLC$. Já que $CMOO'$ é cíclico, $\measuredangle MCO' =
+	\measuredangle MOO'$. Mas é necessário lembrar que $\measuredangle AKO =
+	\measuredangle MLC$. Ou seja,
+\[
+	\measuredangle AKO = \measuredangle MOO' \iff AK \parallel
+	NO \iff AK \perp BC,
+\]
+já que $ NO \perp BC$.
+
+\begin{observation}
+	A principal função de desenhar diagramas muito bem construídos é tentar
+	perceber padrões e desenvolver estratégias que aparentam certas no diagrama,
+	mas ainda têm de ser provadas formalmente. Aproveite disso!
+	No diagrama, $\triangle CLM \sim \triangle AKO$ realmente aparenta ser
+	verdadeiro, sendo bem fácil comprovar isso sabendo que $CMBO$ é um quadrilátero cíclico.
+\end{observation}
+
+\begin{observation}
+	Para descobrir o ponto $N$, o pensamento chave foi tentar achar uma reta tangente a $(ABC)$
+	baseado em informações que já tinhamos antes. Portanto, em problemas que envolvem
+	provar uma certa tangência entre circunferências, pode ser válido usar informações já conhecidas
+	para provar que uma reta é tangente à uma circunferência, e depois provar que tal reta também é
+	tangente à outra circunferência, caso cumpra certo requerimento.
+\end{observation}
+
+\clearpage
+
+\section{Referências}\label{sec:references}
+\end{document}

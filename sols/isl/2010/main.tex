@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{../../../sty/sols}
+
+\olympiad{\textsf{\textbf{Solutions IMO Shortlist 2010}}}
+
+\title{\olympiad}
+\author{Samuel de Araújo Brandão}
+\date{\today}
+
+\begin{document}
+\maketitle
+\preface
+
+\tableofcontents
+
+\clearpage
+
+\section{\textsf{Problems}}
+\begin{enumerate}[label={\textbf{\arabic*.}}]
+	\item Let $ABC$ be an acute triangle with $D, E, F$ the feet of the altitudes
+	      lying on $BC, CA, AB$ respectively. One of the intersection points of the
+	      line $EF$ and the circumcircle is $P.$ The lines $BP$ and $DF$ meet at point
+	      $Q.$ Prove that $AP = AQ.$
+\end{enumerate}
+
+\clearpage
+
+\section{\textsf{Solutions}}
+
+\begin{problem}
+Let $ABC$ be an acute triangle with $D, E, F$ the feet of the altitudes
+lying on $BC, CA, AB$ respectively. One of the intersection points of the
+line $EF$ and the circumcircle is $P.$ The lines $BP$ and $DF$ meet at point
+$Q.$ Prove that $AP = AQ$.
+\end{problem}
+
+\begin{figure}[h]
+	\centering
+	\input{../../../img/sols/isl/10SLG1}
+\end{figure}
+
+Let $\measuredangle$ denote directed angles mod $180^{\circ}$. The line EF meets
+the circumcircle at two points. Directed angles allow us to treat both
+at once, so we fix one of them.
+
+Our goal is to show $\measuredangle PQA = \measuredangle APQ$, i.e., that $\triangle
+	APQ$ is isosceles. We will first prove that $A$, $F$, $P$, $Q$ are concyclic.
+
+Since $\triangle DEF$ is an orthic triangle, $\measuredangle CFA = \measuredangle
+	ADC = 90^{\circ}$. Therefore, $FACD$ is cyclic, culminating in $\measuredangle
+	ACD = \measuredangle AFD = \measuredangle AFQ$. However, $APCB$ is
+cyclic, so $\measuredangle APB = \measuredangle ACB =
+	\measuredangle ACD$. Thus, $\measuredangle APQ = \measuredangle AFQ$. Which
+means that $AFPQ$ is a cyclic quadrilateral.
+
+$FECB$ is a cyclic quadrilateral either, by the same $FACD$'s reason.
+Therefore, putting together everything we've seen so far:
+
+\[
+	\measuredangle PQA = \measuredangle PFA = \measuredangle EFB = \measuredangle ECB
+	= \measuredangle ACB = \measuredangle APB.
+\]
+Hence, $AP=AQ$.
+
+\clearpage
+
+\section{\textsf{References}}\label{sec:references}
+\end{document}

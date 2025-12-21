@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+\usepackage{../../sty/otis}
+
+\unit{\textsf{\textbf{Entry Combo}}}
+
+\title{\unit}
+\author{Samuel de Araújo Brandão}
+\date{\today}
+
+\begin{document}
+\maketitle
+\preface
+
+\tableofcontents
+
+\clearpage
+
+\section{\textsf{Practice Problems}}
+\begin{itemize}
+	\item [\texttt{\textcolor{color7}{19JMO1}}] \href{https://artofproblemsolving.com/community/c5h1823554p12189456}{\textbf{(USAJMO 2019 P1)}} There are $a+b$ bowls arranged in a row, numbered $1$ through $a+b$, where $a$ and $b$ are given positive integers. Initially, each of the first $a$ bowls contains an apple, and each of the last $b$ bowls contains a pear.
+	      A legal move consists of moving an apple from bowl $i$ to bowl $i+1$ and a pear from bowl $j$ to bowl $j-1$, provided that the difference $i-j$ is even. We permit multiple fruits in the same bowl at the same time. The goal is to end up with the first $b$ bowls each containing a pear and the last $a$ bowls each containing an apple. Show that this is possible if and only if the product $ab$ is even.
+	\item [\texttt{\textcolor{color7}{12SLC1}}] \href{https://artofproblemsolving.com/community/c6h546168p3160559}{\textbf{(Shortlist 2012 C1)}} Several positive integers are written in a row. Iteratively, Alice chooses two adjacent numbers $x$ and $y$ such that $x>y$ and $x$ is to the left of $y$, and replaces the pair $(x,y)$ by either $(y+1,x)$ or $(x-1,x)$. Prove that she can perform only finitely many such iterations.
+  \item [\texttt{\textcolor{color7}{12AMO4}}] \href{https://artofproblemsolving.com/community/c5h1083477p4774079}{\textbf{(USAMO 2015 P4)}} Steve is piling $m\geq 1$ indistinguishable stones on the squares of an $n\times n$ grid. Each square can have an arbitrarily high pile of stones. After he finished piling his stones in some manner, he can then perform stone moves, defined as follows. Consider any four grid squares, which are corners of a rectangle, i.e. in positions $(i, k), (i, l), (j, k), (j, l)$ for some $1\leq i, j, k, l\leq n$, such that $i<j$ and $k<l$. A stone move consists of either removing one stone from each of $(i, k)$ and $(j, l)$ and moving them to $(i, l)$ and $(j, k)$ respectively, or removing one stone from each of $(i, l)$ and $(j, k)$ and moving them to $(i, k)$ and $(j, l)$ respectively.
+
+	      Two ways of piling the stones are equivalent if they can be obtained from one another by a sequence of stone moves.
+
+	      How many different non-equivalent ways can Steve pile the stones on the grid?
+      \item [\texttt{\textcolor{color6}{11AM2}}] \textcolor{color6}{[9 \clubsuit]} \href{https://artofproblemsolving.com/community/c5h404349p2254765}{\textbf{(USAMO 2011 P2)}} \quad An integer is assigned to each vertex of a regular pentagon so that the sum of the five integers is 2011. A turn of a solitaire game consists of subtracting an integer $m$ from each of the integers at two neighboring vertices and adding $2m$ to the opposite vertex, which is not adjacent to either of the first two vertices. (The amount $m$ and the vertices chosen can vary from turn to turn.) The game is won at a certain vertex if, after some number of turns, that vertex has the number 2011 and the other four vertices have the number 0. Prove that for any choice of the initial integers, there is exactly one vertex at which the game can be won.
+	\item [\texttt{\textcolor{color6}{21PAGMO5}}] \textcolor{color6}{[9 \clubsuit]} \href{https://artofproblemsolving.com/community/c6h2687954p23322931}{\textbf{(PAGMO 2021 P5)}} \quad Celeste has an unlimited amount of each type of $n$ types of candy, numerated type 1, type 2, ... type n. Initially she takes $m>0$ candy pieces and places them in a row on a table. Then, she chooses one of the following operations (if available) and executes it:
+
+	      $1.$ She eats a candy of type $k$, and in its position in the row she places one candy type $k-1$ followed by one candy type $k+1$ (we consider type $n+1$ to be type 1, and type 0 to be type $n$).
+
+	      $2.$ She chooses two consecutive candies which are the same type, and eats them.
+
+	      Find all positive integers $n$ for which Celeste can leave the table empty for any value of $m$ and any configuration of candies on the table.
+	\item [\texttt{\textcolor{color6}{19CAN3}}] \textcolor{color6}{[5 \clubsuit]} \href{https://artofproblemsolving.com/community/c6h1811674p12071600}{\textbf{(Canadian MO 2019 P3)}} \quad You have a $2m$ by $2n$ grid of squares coloured in the same way as a standard checkerboard. Find the total number of ways to place $mn$ counters on white squares so that each square contains at most one counter and no two counters are in diagonally adjacent white squares.
+	\item [\texttt{\textcolor{color6}{21JMO4}}] \textcolor{color6}{[5 \clubsuit]} \href{https://artofproblemsolving.com/community/c5h2529924p21498566}{\textbf{(USAJMO 2021 P4)}} \quad Carina has three pins, labeled $A, B$, and $C$, respectively, located at the origin of the coordinate plane. In a move, Carina may move a pin to an adjacent lattice point at distance $1$ away. What is the least number of moves that Carina can make in order for triangle $ABC$ to have area 2021?
+	      (A lattice point is a point $(x, y)$ in the coordinate plane where $x$ and $y$ are both integers, not necessarily positive.)
+	\item [\texttt{\textcolor{color6}{08AMO4}}] \textcolor{color6}{[5 \clubsuit]} \href{https://artofproblemsolving.com/community/c5h202905p1116177}{\textbf{(USAMO 2008 P4)}} \quad Let $ \mathcal{P}$ be a convex polygon with $ n$ sides, $ n\ge3$. Any set of $ n - 3$ diagonals of $ \mathcal{P}$ that do not intersect in the interior of the polygon determine a triangulation of $ \mathcal{P}$ into $ n - 2$ triangles. If $ \mathcal{P}$ is regular and there is a triangulation of $ \mathcal{P}$ consisting of only isosceles triangles, find all the possible values of $ n$.
+	\item [\texttt{\textcolor{color3}{25XOOK1}}] \textcolor{color3}{[9 \clubsuit]} \href{https://artofproblemsolving.com/community/c6h3497045p33958997}{\textbf{(XOOK 2025 P1)}} \quad For the Exeter disco party, Oron wants to tile a $2024 \times 2024$ square in the middle of the dance floor with $1 \times 1$ tiles which have arrows pointing either up, left, right, or down.
+
+	      After placing down all the tiles in some configuration, he realizes that he wants to rotate some of the tiles so that no matter which tile a dancer starts on, after following the arrows they end up leaving the grid through some fixed cell. What's the minimum number of tiles he needs to rotate so that this is always possible?
+	\item [\texttt{\textcolor{color3}{18SLN1}}] \textcolor{color3}{[5 \clubsuit]} \href{https://artofproblemsolving.com/community/p12752840}{\textbf{(Shortlist 2018 N1)}} \quad Determine all pairs $(n, k)$ of distinct positive integers such that there exists a positive integer $s$ for which the number of divisors of $sn$ and of $sk$ are equal.
+	\item [\texttt{\textcolor{color3}{74IMO4}}] \textcolor{color3}{[5 \clubsuit]} \href{https://artofproblemsolving.com/community/c6h58591p357975}{\textbf{(IMO 1974 P4)}} \quad Consider decompositions of an $8\times 8$ chessboard into $p$ non-overlapping rectangles subject to the following conditions:
+	      (i) Each rectangle has as many white squares as black squares.
+	      (ii) If $a_i$ is the number of white squares in the $i$-th rectangle, then $a_1<a_2<\ldots <a_p$.
+	      Find the maximum value of $p$ for which such a decomposition is possible. For this value of $p$, determine all possible sequences $a_1,a_2,\ldots ,a_p$.
+	\item [\texttt{\textcolor{color3}{18EGMO4}}] \textcolor{color3}{[5 \clubsuit]} \href{https://artofproblemsolving.com/community/c6h1625929p10191585}{\textbf{(EGMO 2018 P4)}} \quad A domino is a $ 1 \times 2 $ or $ 2 \times 1 $ tile.
+	      Let $n \ge 3 $ be an integer. Dominoes are placed on an $n \times n$ board in such a way that each domino covers exactly two cells of the board, and dominoes do not overlap. The value of a row or column is the number of dominoes that cover at least one cell of this row or column. The configuration is called balanced if there exists some $k \ge 1 $ such that each row and each column has a value of $k$. Prove that a balanced configuration exists for every $n \ge 3 $, and find the minimum number of dominoes needed in such a configuration.
+	\item [\texttt{\textcolor{color3}{23AMO5}}] \textcolor{color3}{[3 \clubsuit]} \href{https://artofproblemsolving.com/community/c5h3038314p27349487}{\textbf{(USAMO 2023 P5)}} \quad Let $n\geq3$ be an integer. We say that an arrangement of the numbers $1$, $2$, $\dots$, $n^2$ in a $n \times n$ table is row-valid if the numbers in each row can be permuted to form an arithmetic progression, and column-valid if the numbers in each column can be permuted to form an arithmetic progression. For what values of $n$ is it possible to transform any row-valid arrangement into a column-valid arrangement by permuting the numbers in each row?
+	\item [\texttt{\textcolor{color3}{16JMO4}}] \textcolor{color3}{[3 \clubsuit]} \href{https://artofproblemsolving.com/community/c5h1231012p6220314}{\textbf{(USAJMO 2016 P4)}} \quad Find, with proof, the least integer $N$ such that if any $2016$ elements are removed from the set ${1, 2,...,N}$, one can still find $2016$ distinct numbers among the remaining elements with sum $N$.
+\end{itemize}
+
+\clearpage
+
+\section{\textsf{Solutions}}
+
+\subsection{Lecture Notes}
+
+\subsubsection{USAJMO 2019 P1}
+\begin{problem}
+There are $a+b$ bowls arranged in a row, numbered $1$ through $a+b$, where $a$
+and $b$ are given positive integers. Initially, each of the first $a$
+bowls contains an apple, and each of the last $b$ bowls contains a
+pear. A legal move consists of moving an apple from bowl $i$ to bowl $i+1$
+and a pear from bowl $j$ to bowl $j-1$, provided that the difference $i-j$ is
+even. We permit multiple fruits in the same bowl at the same time. The goal is
+to end up with the first $b$ bowls each containing a pear and the last $a$
+bowls each containing an apple. Show that this is possible if and only if the
+product $ab$ is even.
+\end{problem}
+
+We claim that, in order to reach the desired configuration, $a$ and $b$ cannot
+both be odd; equivalently, $ab$ must be even. We will first show that an even
+product $ab$ always allows us to reach the goal. Then we will prove that the
+desired configuration is impossible when $ab$ is odd.
+
+Let $i'$ be the apple originally in bowl $i$ and $j'$ be the pear
+in $j$.
+
+\begin{claim}
+	If $i-j$ is even, then $i'$ can always be swapped with $j'$.
+\end{claim}
+
+\begin{proof}
+	WLOG assume $i<j$. After $n$ legal moves, $i'$ and $j'$ are in bowls $i+n$ and
+	$j-n$, respectively. Since $i-j$ is even, $n=\frac{j-i}{2}$ is an integer.
+	Therefore, $i'$ and $j'$ meet at
+	\[
+		i+n=j-n=\frac{i+j}{2}.
+	\]
+	After that, $i'$ can move to $\frac{i+j}{2}+n$ to reach $j$ and $j'$ to
+	$\frac{i+j}{2}-n$ to reach $i$.
+\end{proof}
+
+Now suppose $ab$ is even.
+
+\begin{itemize}
+	\item If $\min(a,b)=1$, say $a=1$, then $b$ must be even for $ab$ to be even.
+	      Therefore the bowls $1$ and $a+b$ can be swapped, because $(a+b)-1$ is
+	      even.
+	\item If $\min(a,b)\ge 2$
+	      \begin{itemize}
+		      \item and $a+b$ is odd, $(a+b)-1$ is even, so the first and the last
+		            bowls can be swapped. Therefore, $ab$ can be reduced to $(a-1)
+			            (b-1)$ since the bowls $1$ and $a+b$ already have the desired
+		            fruits, which is still even. Thus, by complete induction, $a+b$
+		            odd works, since $(a-1)+(b-1)$ is smaller than $a+b$.
+		      \item and $a+b$ is even, $(a+b)-2$ and $(a+b-1)-1$ are even. $a$ and $b$
+		            are both even numbers, because if they were both odd numbers, $ab$
+		            wouldn't be even. So the
+		            second and the last bowls can be swapped, as the first and
+		            penultimate bowls. Therefore, we can reduce $ab$ to $(a-1)(b-1)$,
+		            which is still even, since the bowls $1$, $2$, $a+b-1$ and $a+b$
+		            already have the desired fruits. Thus, by complete induction,
+		            $a+b$ even works, since $(a-2)+(b-2)$ is smaller than $a+b$.
+	      \end{itemize}
+\end{itemize}
+Hence, when $ab$ is even, we can reach the desired goal.
+
+Now, by the sake of contradiction, say $ab$ is odd. Let $A$ be the amount of
+apples in the first odd-numbered bowls and $B$ of pears in the last odd-numbered
+$b$ bowls. We already know that $i$ and $j$ must have parity in order to $i-j$ be
+even. Therefore $A$ and $B$ are invariants, because after a legal move, $i'$ and
+$j'$ must keep having parity, so $A$ and $B$ are always going to each decrease by
+$1$ or increase by $1$.
+
+Since $A-B$ is invariant, the remainder must always be equal, regardless of the fruits'
+order (apples first, then pears, or pears first, then apples). Since $a$ is odd,
+but $a+b$ is even, $A=\frac{a+1}{2}$ and $B=\frac{b-1}{2}$ originally, but after
+the swaps, $A=\frac{a-1}{2}$ and $B=\frac{b+1}{2}$. Consequently,
+\[
+	\frac{a+1}{2}-\frac{b-1}{2}=\frac{a-1}{2}-\frac{b+1}{2}\iff\frac{a-b+2}{2}=
+	\frac{a-b-2}{2}\iff 2=-2
+\]
+Contradiction! Hence, we can reach the desired goal if and only if $ab$ is even.
+\clearpage
+
+\subsubsection{Shortlist 2012 C1}
+\begin{problem}
+Several positive integers are written in a row. Iteratively, Alice chooses two
+adjacent numbers $x$ and $y$ such that $x>y$ and $x$ is to the left of $y$, and
+replaces the pair $(x,y)$ by either $(y+1,x)$ or $(x-1,x)$. Prove that she can
+perform only finitely many such iterations.
+\end{problem}
+
+\textcolor{color1}{\textbf{First Solution --- }}Firstly, we show that she can perform only finitely many such iterations. Then,
+we demonstrate that she can perform at most $n!$ iterations.
+
+Let $z$ be the greatest number and $n$ be any number of the row. Evidently
+$z \ge n$ and $z$ is invariant, regardless of the iteration. Replacing $(x,y)$
+with $(y+1,x)$ adds $1$ to the row's total sum; with $(x-1,x)$, adds $x-y-1$.
+\clearpage
+
+\subsubsection{USAMO 2015 P4}
+\begin{problem}
+Steve is piling $m\geq 1$ indistinguishable stones on the squares of an $n\times n$ grid. Each square can have an arbitrarily high pile of stones. After he finished piling his stones in some manner, he can then perform stone moves, defined as follows. Consider any four grid squares, which are corners of a rectangle, i.e. in positions $(i, k), (i, l), (j, k), (j, l)$ for some $1\leq i, j, k, l\leq n$, such that $i<j$ and $k<l$. A stone move consists of either removing one stone from each of $(i, k)$ and $(j, l)$ and moving them to $(i, l)$ and $(j, k)$ respectively, or removing one stone from each of $(i, l)$ and $(j, k)$ and moving them to $(i, k)$ and $(j, l)$ respectively.
+
+Two ways of piling the stones are equivalent if they can be obtained from one another by a sequence of stone moves.
+
+How many different non-equivalent ways can Steve pile the stones on the grid?
+\end{problem}
+
+\clearpage
+
+\subsection{Mandatory}
+
+\subsubsection{USAMO 2011 P2}
+\begin{problem}
+An integer is assigned to each vertex of a regular pentagon so that the sum of the five integers is 2011. A turn of a solitaire game consists of subtracting an integer $m$ from each of the integers at two neighboring vertices and adding $2m$ to the opposite vertex, which is not adjacent to either of the first two vertices. (The amount $m$ and the vertices chosen can vary from turn to turn.) The game is won at a certain vertex if, after some number of turns, that vertex has the number 2011 and the other four vertices have the number 0. Prove that for any choice of the initial integers, there is exactly one vertex at which the game can be won.
+\end{problem}
+
+\clearpage
+
+\subsubsection{PAGMO 2021 P5}
+\begin{problem}
+Celeste has an unlimited amount of each type of $n$ types of candy, numerated type 1, type 2, ... type n. Initially she takes $m>0$ candy pieces and places them in a row on a table. Then, she chooses one of the following operations (if available) and executes it:
+
+$1.$ She eats a candy of type $k$, and in its position in the row she places one candy type $k-1$ followed by one candy type $k+1$ (we consider type $n+1$ to be type 1, and type 0 to be type $n$).
+
+$2.$ She chooses two consecutive candies which are the same type, and eats them.
+
+Find all positive integers $n$ for which Celeste can leave the table empty for any value of $m$ and any configuration of candies on the table.
+
+\end{problem}
+
+\clearpage
+
+\subsubsection{Canadian MO 2019 P3}
+\begin{problem}
+You have a $2m$ by $2n$ grid of squares coloured in the same way as a standard checkerboard. Find the total number of ways to place $mn$ counters on white squares so that each square contains at most one counter and no two counters are in diagonally adjacent white squares.
+\end{problem}
+
+\clearpage
+
+\subsubsection{USAJMO 2021 P4}
+\begin{problem}
+Carina has three pins, labeled $A, B$, and $C$, respectively, located at the origin of the coordinate plane. In a move, Carina may move a pin to an adjacent lattice point at distance $1$ away. What is the least number of moves that Carina can make in order for triangle $ABC$ to have area 2021?
+(A lattice point is a point $(x, y)$ in the coordinate plane where $x$ and $y$ are both integers, not necessarily positive.)
+\end{problem}
+
+\clearpage
+
+\subsubsection{USAMO 2008 P4}
+\begin{problem}
+Let $ \mathcal{P}$ be a convex polygon with $ n$ sides, $ n\ge3$. Any set of $ n - 3$ diagonals of $ \mathcal{P}$ that do not intersect in the interior of the polygon determine a triangulation of $ \mathcal{P}$ into $ n - 2$ triangles. If $ \mathcal{P}$ is regular and there is a triangulation of $ \mathcal{P}$ consisting of only isosceles triangles, find all the possible values of $ n$.
+\end{problem}
+
+\clearpage
+
+\subsection{Not mandatory}
+
+\subsubsection{XOOK 2025 P1}
+\begin{problem}
+For the Exeter disco party, Oron wants to tile a $2024 \times 2024$ square in the middle of the dance floor with $1 \times 1$ tiles which have arrows pointing either up, left, right, or down.
+
+After placing down all the tiles in some configuration, he realizes that he wants to rotate some of the tiles so that no matter which tile a dancer starts on, after following the arrows they end up leaving the grid through some fixed cell. What's the minimum number of tiles he needs to rotate so that this is always possible?
+
+\end{problem}
+
+\clearpage
+
+\subsubsection{Shortlist 2018 N1}
+\begin{problem}
+Determine all pairs $(n, k)$ of distinct positive integers such that there exists a positive integer $s$ for which the number of divisors of $sn$ and of $sk$ are equal.
+\end{problem}
+
+\clearpage
+
+\subsubsection{IMO 1974 P4}
+\begin{problem}
+Consider decompositions of an $8\times 8$ chessboard into $p$ non-overlapping rectangles subject to the following conditions:
+(i) Each rectangle has as many white squares as black squares.
+(ii) If $a_i$ is the number of white squares in the $i$-th rectangle, then $a_1<a_2<\ldots <a_p$.
+\end{problem}
+
+\clearpage
+
+\subsubsection{EGMO 2018 P4}
+\begin{problem}
+A domino is a $ 1 \times 2 $ or $ 2 \times 1 $ tile. Let $n \ge 3 $ be an integer.
+Dominoes are placed on an $n \times n$ board in such a way that each domino covers
+exactly two cells of the board, and dominoes do not overlap. The value of a row
+or column is the number of dominoes that cover at least one cell of this row or
+column. The configuration is called balanced if there exists some $k \ge 1 $ such
+that each row and each column has a value of $k$. Prove that a balanced
+configuration exists for every $n \ge 3 $, and find the minimum number of dominoes
+needed in such a configuration.
+\end{problem}
+
+\clearpage
+
+\subsubsection{USAMO 2023 P5}
+\begin{problem}
+Let $n\geq3$ be an integer. We say that an arrangement of the numbers $1$, $2$, $\dots$, $n^2$ in a $n \times n$ table is row-valid if the numbers in each row can be permuted to form an arithmetic progression, and column-valid if the numbers in each column can be permuted to form an arithmetic progression. For what values of $n$ is it possible to transform any row-valid arrangement into a column-valid arrangement by permuting the numbers in each row?
+\end{problem}
+
+\clearpage
+
+\subsubsection{USAJMO 2016 P4}
+\begin{problem}
+Find, with proof, the least integer $N$ such that if any $2016$ elements are
+removed from the set ${1, 2,...,N}$, one can still find $2016$ distinct numbers
+among the remaining elements with sum $N$.
+\end{problem}
+
+The least integer $N$ that satisfies the statement is
+\[
+	\sum^{4032}_{i=2017} i = 6049 \cdot 1008 = 6097392.
+\]
+
+Notice that if we form pairs of numbers from the set with equal sum, there will be
+at least $3024$ such pairs. Even if at most $2016$ pairs are destroyed, there will
+still remain at least $1008$ pairs with equal sum, i.e., $2016$ numbers. Each pair
+consists of the $x$th number from the left and the $x$th number from the right.
+This way, each pair has sum $6048+1$ as in $(1,6048), (2,6047), \dots, (3024,3025)$.
+$6049 \cdot 1008 = 6097392$.
+
+$N$ can't be less than $6,097,392$ because the least possible sum is
+\[
+	\sum^{2016}_{i=1} i=2033136.
+\]
+However, the first $2016$ numbers of the set can be removed, changing the least
+possible sum to
+\[
+	\sum^{4032}_{i=2017} i = 6097392.
+\]
+
+
+\clearpage
+
+\section{\textsf{References}}\label{sec:references}
+\end{document}
